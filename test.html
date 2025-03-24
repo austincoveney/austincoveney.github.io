@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>For Mom, With Love</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <style>:root
+        {
+            --primary-color: #e5749e;
+            --secondary-color: #f8c8dc;
+            --accent-color: #9c5a8b;
+            --light-color: #ffffff;
+            --dark-color: #4a3b46;
+            --text-color: #513b47;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #ffedf3 0%, #fff2f7 100%);
+            background-attachment: fixed;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml, %3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z' fill='%23e5749e' fill-opacity='0.06' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.8;
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            perspective: 2000px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .card-front,
+        .card-back {
+            width: 100%;
+            min-height: 580px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .card-front {
+            background: linear-gradient(145deg, var(--secondary-color), var(--primary-color));
+            background-size: 200% 200%;
+            animation: gradientBackground 15s ease infinite;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            z-index: 2;
+            position: relative;
+            overflow: hidden;
+            border: 10px solid white;
+        }
+
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0 50%;
+            }
+        }
+
+        .card-back {
+            background: white;
+            transform: rotateY(180deg);
+            padding: 0;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) white;
+            border: 10px solid white;
+        }
+
+        .card-back::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .card-back::-webkit-scrollbar-track {
+            background: white;
+        }
+
+        .card-back::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            border: 2px solid white;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        /* Front card content */
+        .card-decorations {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .floating-element {
+            position: absolute;
+            opacity: 0.6;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .flower-1 {
+            top: 10%;
+            left: 10%;
+            width: 50px;
+            height: 50px;
+            animation-delay: 0s;
+        }
+
+        .flower-2 {
+            bottom: 15%;
+            right: 10%;
+            width: 40px;
+            height: 40px;
+            animation-delay: 2s;
+        }
+
+        .heart-1 {
+            top: 20%;
+            right: 15%;
+            width: 35px;
+            height: 35px;
+            animation-delay: 1s;
+        }
+
+        .heart-2 {
+            bottom: 25%;
+            left: 15%;
+            width: 30px;
+            height: 30px;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        .front-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: white;
+            max-width: 320px;
+            font-weight: 300;
+        }
+
+        .mom-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 25px;
+            position: relative;
+            transform: translateZ(0);
+        }
+
+        .photo-frame {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .photo-frame::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            border: 2px dashed rgba(255, 255, 255, 0.8);
+            animation: rotate 30s linear infinite;
+        }
+
+        .photo-frame::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            border: 8px solid white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Countdown styles */
+        .countdown-container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 15px;
+            padding: 15px;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .countdown-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            min-width: 60px;
+        }
+
+        .countdown-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            position: relative;
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: var(--primary-color);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn:disabled {
+            background-color: rgba(255, 255, 255, 0.6);
+            color: rgba(216, 112, 147, 0.6);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn:disabled::before {
+            display: none;
+        }
+
+        /* Back card content */
+        .card-content {
+            padding: 30px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        .header h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        /* Memory sections */
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 30px 0 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .memory-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            transform: rotate(0deg);
+        }
+
+        .memory-image-container:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+
+        .memory-image-container:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .memory-image-container:hover {
+            transform: rotate(0deg) scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            z-index: 5;
+        }
+
+        .memory-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .memory-image-container:hover .memory-image {
+            transform: scale(1.1);
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            padding: 20px 15px 10px;
+            font-size: 0.9rem;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .memory-image-container:hover .image-caption {
+            transform: translateY(0);
+        }
+
+        .memory-boxes {
+            margin: 25px 0;
+        }
+
+        .memory-box {
+            background: linear-gradient(to right, #fff5f9, #fff);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .memory-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(229, 116, 158, 0.1), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .memory-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .memory-box:hover::before {
+            opacity: 1;
+        }
+
+        .memory-box h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+
+        .memory-box p {
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .quote-box {
+            background-color: #fef6fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            line-height: 1.8;
+            color: var(--text-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .quote-box::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            position: absolute;
+            top: -15px;
+            left: 10px;
+            color: var(--primary-color);
+            opacity: 0.2;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: right;
+            margin: 40px 0 20px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 5;
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            background: var(--accent-color);
+            transform: rotate(90deg);
+        }
+
+        /* Confetti animation */
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f0f;
+            position: absolute;
+            top: 0;
+            opacity: 0;
+            z-index: 1;
+            animation: confetti-fall 5s linear forwards;
+        }
+
+        /* Developer mode toggle */
+        .dev-mode {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            padding: 5px 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 999;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .dev-mode:hover {
+            opacity: 1;
+        }
+
+        /* Media queries */
+        @media(min-width: 480px) {
+            .images-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-front,
+            .card-back {
+                min-height: 650px;
+            }
+
+            h1 {
+                font-size: 3.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div
+            class="card" id="card">
+            <!-- Card Front -->
+            <div
+                class="card-front">
+                <!-- Decorative elements -->
+                <div
+                    class="card-decorations">
+                    <!-- Flower 1 -->
+                    <svg class="floating-element flower-1" viewbox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,2C13.85,2 15.55,2.78 16.9,4.1C18.22,5.42 19,7.15 19,9C19,10.85 18.22,12.58 16.9,13.9C15.58,15.22 13.85,16 12,16C10.15,16 8.42,15.22 7.1,13.9C5.78,12.58 5,10.85 5,9C5,7.15 5.78,5.42 7.1,4.1C8.45,2.78 10.15,2 12,2M12,4C10.69,4 9.45,4.5 8.4,5.4C7.5,6.45 7,7.69 7,9C7,10.31 7.5,11.55 8.4,12.6C9.45,13.5 10.69,14 12,14C13.31,14 14.55,13.5 15.6,12.6C16.5,11.55 17,10.31 17,9C17,7.69 16.5,6.45 15.6,5.4C14.55,4.5 13.31,4 12,4M12,6C12.83,6 13.5,6.67 13.5,7.5C13.5,8.33 12.83,9 12,9C11.17,9 10.5,8.33 10.5,7.5C10.5,6.67 11.17,6 12,6M7.5,10.5C8.33,10.5 9,11.17 9,12C9,12.83 8.33,13.5 7.5,13.5C6.67,13.5 6,12.83 6,12C6,11.17 6.67,10.5 7.5,10.5M16.5,10.5C17.33,10.5 18,11.17 18,12C18,12.83 17.33,13.5 16.5,13.5C15.67,13.5 15,12.83 15,12C15,11.17 15.67,10.5 16.5,10.5M12,12C12.83,12 13.5,12.67 13.5,13.5C13.5,14.33 12.83,15 12,15C11.17,15 10.5,14.33 10.5,13.5C10.5,12.67 11.17,12 12,12Z"/>
+                    </svg>
+
+                    <!-- Flower 2 -->
+                    <svg class="floating-element flower-2" viewbox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,2C13.85,2 15.55,2.78 16.9,4.1C18.22,5.42 19,7.15 19,9C19,10.85 18.22,12.58 16.9,13.9C15.58,15.22 13.85,16 12,16C10.15,16 8.42,15.22 7.1,13.9C5.78,12.58 5,10.85 5,9C5,7.15 5.78,5.42 7.1,4.1C8.45,2.78 10.15,2 12,2M12,4C10.69,4 9.45,4.5 8.4,5.4C7.5,6.45 7,7.69 7,9C7,10.31 7.5,11.55 8.4,12.6C9.45,13.5 10.69,14 12,14C13.31,14 14.55,13.5 15.6,12.6C16.5,11.55 17,10.31 17,9C17,7.69 16.5,6.45 15.6,5.4C14.55,4.5 13.31,4 12,4M12,6C12.83,6 13.5,6.67 13.5,7.5C13.5,8.33 12.83,9 12,9C11.17,9 10.5,8.33 10.5,7.5C10.5,6.67 11.17,6 12,6M7.5,10.5C8.33,10.5 9,11.17 9,12C9,12.83 8.33,13.5 7.5,13.5C6.67,13.5 6,12.83 6,12C6,11.17 6.67,10.5 7.5,10.5M16.5,10.5C17.33,10.5 18,11.17 18,12C18,12.83 17.33,13.5 16.5,13.5C15.67,13.5 15,12.83 15,12C15,11.17 15.67,10.5 16.5,10.5M12,12C12.83,12 13.5,12.67 13.5,13.5C13.5,14.33 12.83,15 12,15C11.17,15 10.5,14.33 10.5,13.5C10.5,12.67 11.17,12 12,12Z"/>
+                    </svg>
+
+                    <!-- Heart 1 -->
+                    <svg class="floating-element heart-1" viewbox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/>
+                    </svg>
+                </div>
+
+                <div class="front-content">
+                    <div class="photo-frame">
+                        <img src="/api/placeholder/400/400" alt="Mom and Me" class="mom-photo">
+                    </div>
+
+                    <h1>Happy Mother's Day</h1>
+                    <p class="subtitle">To the most amazing mom in the world, with all my love</p>
+
+                    <!-- Countdown Container -->
+                    <div class="countdown-container" id="countdown-container">
+                        <p class="countdown-title">Mother's Day will be here in:</p>
+                        <div class="countdown">
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="days">00</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="hours">00</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="minutes">00</span>
+                                <span class="countdown-label">Mins</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-value" id="seconds">00</span>
+                                <span class="countdown-label">Secs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn" id="open-button" disabled>Wait for Mother's Day</button>
+                </div>
+            </div>
+
+            <!-- Card Back -->
+            <div class="card-back">
+                <button class="close-btn" id="close-button">×</button>
+
+                <div class="card-content">
+                    <div class="header">
+                        <h2>Dearest Mom,</h2>
+                        <p>On this special day, I wanted to take a moment to tell you how much you mean to me. Your love, strength, and wisdom have shaped me into the person I am today. Thank you for always being there, through thick and thin.</p>
+                    </div>
+
+                    <!-- Images Section -->
+                    <h3 class="section-title">Our Special Moments</h3>
+                    <div class="images-grid">
+                        <div class="memory-image-container">
+                            <img src="/api/placeholder/300/300" alt="Memory 1" class="memory-image">
+                            <div class="image-caption">Our beach day adventure</div>
+                        </div>
+                        <div class="memory-image-container">
+                            <img src="/api/placeholder/300/300" alt="Memory 2" class="memory-image">
+                            <div class="image-caption">Christmas morning 2023</div>
+                        </div>
+                        <div class="memory-image-container">
+                            <img src="/api/placeholder/300/300" alt="Memory 3" class="memory-image">
+                            <div class="image-caption">Your birthday celebration</div>
+                        </div>
+                        <div class="memory-image-container">
+                            <img src="/api/placeholder/300/300" alt="Memory 4" class="memory-image">
+                            <div class="image-caption">Our favorite hike</div>
+                        </div>
+                    </div>
+
+                    <div class="quote-box">
+                        <p>Mom, you've taught me that love is patient and kind, that strength comes from gentleness, and that the most beautiful things in life are the moments we share together. I'm forever grateful for everything you are.</p>
+                    </div>
+
+                    <!-- Reasons Section -->
+                    <h3 class="section-title">Why You're Amazing</h3>
+                    <div class="memory-boxes">
+                        <div class="memory-box">
+                            <h3>Your Endless Love</h3>
+                            <p>Your love has no conditions, no limits, and no end. You've shown me what it means to love unconditionally, and it's shaped how I see the world and treat others. Even on my worst days, your love has never wavered.</p>
+                        </div>
+                        <div class="memory-box">
+                            <h3>Your Incredible Strength</h3>
+                            <p>Through every challenge, you've stood tall with grace and resilience. You've shown me that true strength isn't about never falling, but about rising every time we fall. Your courage inspires me daily.</p>
+                        </div>
+                        <div class="memory-box">
+                            <h3>Your Timeless Wisdom</h3>
+                            <p>Your advice and guidance have been my compass in life. Even when I didn't want to hear it, your wisdom has steered me in the right direction countless times. You always seem to know exactly what to say.</p>
+                        </div>
+                    </div>
+
+                    <p>Thank you for everything you do, for the sacrifices you've made, and for the unconditional love you give so freely. I'm beyond blessed to have you as my mom, and I hope this day brings you even a fraction of the joy you've brought to my life.</p>
+
+                    <p class="signature">With all my love,<br>Your Child</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dev-mode">
+        <label for="dev-checkbox">Dev Mode:</label>
+        <input type="checkbox" id="dev-checkbox">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () { // Elements
+            const card = document.getElementById('card');
+            const openButton = document.getElementById('open-button');
+            const closeButton = document.getElementById('close-button');
+            const devCheckbox = document.getElementById('dev-checkbox');
+            const countdownContainer = document.getElementById('countdown-container');
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            // Target date - March 30, 2025
+            const targetDate = new Date("March 30, 2025 00:00:00").getTime();
+
+            // Flag for developer mode
+            let devMode = false;
+
+            // Update the countdown
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const timeRemaining = targetDate - now;
+
+                // Calculate days, hours, minutes, seconds
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                // Update DOM
+                daysEl.innerText = days.toString().padStart(2, '0');
+                hoursEl.innerText = hours.toString().padStart(2, '0');
+                minutesEl.innerText = minutes.toString().padStart(2, '0');
+                secondsEl.innerText = seconds.toString().padStart(2, '0');
+
+                // Check if it's Mother's Day or if dev mode is on
+                if (timeRemaining <= 0 || devMode) {
+                    openButton.disabled = false;
+                    openButton.textContent = "Open Your Special Card";
+
+                    if (timeRemaining <= 0) {
+                        countdownContainer.style.display = 'none';
+                    }
+                } else {
+                    openButton.disabled = true;
+                    openButton.textContent = "Wait for Mother's Day";
+                }
+            }
+
+            // Initial countdown update
+            updateCountdown();
+
+            // Update countdown every second
+            setInterval(updateCountdown, 1000);
+
+            // Open card
+            openButton.addEventListener('click', function () {
+                if (! openButton.disabled) {
+                    card.classList.add('flipped');
+                    createConfetti();
+
+                    // Vibration feedback for mobile devices
+                    if (navigator.vibrate) {
+                        navigator.vibrate(100);
+                    }
+                }
+            });
+
+            // Close card
+            closeButton.addEventListener('click', function () {
+                card.classList.remove('flipped');
+
+                // Vibration feedback for mobile devices
+                if (navigator.vibrate) {
+                    navigator.vibrate([50, 30, 50]);
+                }
+            });
+
+            // Toggle developer mode
+            devCheckbox.addEventListener('change', function () {
+                devMode = this.checked;
+                updateCountdown();
+            });
+
+            // Function to create confetti effect
+            function createConfetti() {
+                const confettiCount = 100;
+                const container = document.body;
+
+                const colors = [
+                    '#e5749e',
+                    '#f8c8dc',
+                    '#faeaeb',
+                    '#9c5a8b',
+                    '#f9d5e5'
+                ];
+
+                for (let i = 0; i < confettiCount; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+
+                    // Randomize confetti properties
+                    const size = Math.random() * 10 + 5;
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = size + 'px';
+                    confetti.style.height = size + 'px';
+                    confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                    confetti.style.animationDelay = Math.random() * 5 + 's';
+
+                    // Randomize shapes
+                    if (Math.random() > 0.5) {
+                        confetti.style.borderRadius = '50%';
+                    } else if (Math.random() > 0.5) {
+                        confetti.style.borderRadius = '0';
+                    } else {
+                        confetti.style.borderRadius = '5px';
+                    } container.appendChild(confetti);
+
+                    // Remove confetti after animation
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 8000);
+                }
+            }
+
+            // Handle touch events for images
+            const imageContainers = document.querySelectorAll('.memory-image-container');
+            imageContainers.forEach(container => {
+                container.addEventListener('touchstart', function () {
+                    this.style.transform = 'scale(1.03)';
+                }, {passive: true});
+
+                container.addEventListener('touchend', function () {
+                    setTimeout(() => {
+                        if (this.classList.contains('memory-image-container')) {
+                            if (Array.from(imageContainers).indexOf(this) % 2 === 0) {
+                                this.style.transform = 'rotate(-2deg)';
+                            } else {
+                                this.style.transform = 'rotate(2deg)';
+                            }
+                        }
+                    }, 300);
+                }, {passive: true});
+            });
+
+            // Prevent drag on images
+            const allImages = document.querySelectorAll('img');
+            allImages.forEach(img => {
+                img.addEventListener('dragstart', function (e) {
+                    e.preventDefault();
+                });
+            });
+
+            // Handle orientation change
+            window.addEventListener('orientationchange', function () {
+                setTimeout(function () {
+                    window.scrollTo(0, 0);
+                }, 300);
+            });
+
+            // Handle errors gracefully
+            window.addEventListener('error', function (e) {
+                console.error('Error caught:', e.message);
+            });
+        });
+    </script>
+</body></html></svg><!-- Heart 2 --><svg class="floating-element heart-2" viewbox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path
