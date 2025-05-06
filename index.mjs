@@ -363,19 +363,38 @@ $(document).ready(function() {
     
     // Download CV button functionality
     $("#download-cv").click(function(e) {
-        // If no real file exists, show a fallback message
-        if (!$(this).attr('download')) {
-            e.preventDefault();
-            alert('CV download is set up. In a real website, your actual CV file would be downloaded here.');
-        } else {
-            // Add visual feedback for download
-            const originalText = $(this).html();
-            $(this).html('<i class="fas fa-spinner fa-spin"></i> Downloading...');
-            
+        e.preventDefault();
+        const cvUrl = "static/documents/Austin Coveney CV.pdf";
+        const originalText = $(this).html();
+        
+        // Change button text to show download in progress
+        $(this).html('<i class="fas fa-spinner fa-spin"></i> Downloading...');
+        
+        // Create a hidden iframe to handle the download
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+        
+        // Set up iframe load event to restore button text
+        iframe.onload = function() {
             setTimeout(() => {
-                $(this).html(originalText);
-            }, 1500);
-        }
+                $("#download-cv").html(originalText);
+                // Remove the iframe after a delay
+                setTimeout(() => {
+                    document.body.removeChild(iframe);
+                }, 1000);
+            }, 1000);
+        };
+        
+        // Set up error handling
+        iframe.onerror = function() {
+            $("#download-cv").html(originalText);
+            alert('There was an error downloading the CV. Please try again later.');
+            document.body.removeChild(iframe);
+        };
+        
+        // Start the download
+        iframe.src = cvUrl;
     });
     
     // Project Modal Functionality
