@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Austin Coveney - Entrepreneur & Sales Professional</title>
-    <meta name="description" content="Professional portfolio of Austin Coveney, entrepreneur specializing in sales, marketing, and business development">
-    
+    <meta name="description"
+        content="Professional portfolio of Austin Coveney, entrepreneur specializing in sales, marketing, and business development">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -79,7 +83,7 @@
             }
         }
     </script>
-    
+
     <style>
         /* Base styles to ensure elements are visible before JavaScript loads */
         .skill-progress {
@@ -87,7 +91,7 @@
             transition: width 1.5s ease-in-out;
             position: relative;
         }
-        
+
         .timeline-line::before {
             content: '';
             position: absolute;
@@ -98,13 +102,13 @@
             height: 100%;
             background-color: #4a63e7;
         }
-        
+
         @media (max-width: 767px) {
             .timeline-line::before {
                 left: 1rem;
             }
         }
-        
+
         .scroll-progress {
             position: fixed;
             top: 0;
@@ -115,25 +119,33 @@
             width: 0;
             transition: width 0.1s;
         }
-        
+
         /* Animation classes */
         .fade-in {
             animation: fadeIn 0.5s ease forwards;
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
-        
+
         /* Input animations */
-        input:focus + label, textarea:focus + label, input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label {
+        input:focus+label,
+        textarea:focus+label,
+        input:not(:placeholder-shown)+label,
+        textarea:not(:placeholder-shown)+label {
             transform: translateY(-100%) scale(0.8);
             background-color: #f8fafc;
             padding: 0 0.5rem;
             color: #4a63e7;
         }
-        
+
         /* Timeline content styles */
         .timeline-content-odd::before {
             content: '';
@@ -146,7 +158,7 @@
             transform: rotate(45deg);
             box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.03);
         }
-        
+
         .timeline-content-even::before {
             content: '';
             position: absolute;
@@ -158,49 +170,64 @@
             transform: rotate(45deg);
             box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.03);
         }
-        
+
         @media (max-width: 767px) {
+
             .timeline-content-odd::before,
             .timeline-content-even::before {
                 left: -1rem;
                 right: auto;
             }
         }
-        
+
         /* Portfolio item overlay animations */
         .portfolio-item:hover .portfolio-overlay {
             opacity: 1;
         }
-        
+
         .portfolio-item:hover .portfolio-info {
             transform: translateY(0);
         }
-        
+
         .portfolio-item:hover .portfolio-img img {
             transform: scale(1.1);
         }
     </style>
 </head>
 
-<body class="font-sans text-base text-dark bg-light antialiased overflow-x-hidden relative opacity-0 transition-opacity duration-500" id="body">
+<body
+    class="font-sans text-base text-dark bg-light antialiased overflow-x-hidden relative opacity-0 transition-opacity duration-500"
+    id="body">
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress"></div>
-    
+
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full z-50 py-8 transition-all duration-300" id="header">
         <div class="container mx-auto px-4 md:px-8">
             <nav id="navbar" class="flex justify-between items-center">
                 <div class="logo">
-                    <a href="#hero" class="text-2xl font-bold text-primary font-serif relative inline-block hover:after:w-full after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-primary after:transition-all after:duration-300">AC</a>
+                    <a href="#hero"
+                        class="text-2xl font-bold text-primary font-serif relative inline-block hover:after:w-full after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-primary after:transition-all after:duration-300">AC</a>
                 </div>
                 <ul class="nav-links hidden md:flex items-center gap-6">
-                    <li><a href="#about" class="text-base font-medium text-dark hover:text-primary transition-colors duration-300 relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all hover:before:w-full">About</a></li>
-                    <li><a href="#skills" class="text-base font-medium text-dark hover:text-primary transition-colors duration-300 relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all hover:before:w-full">Skills</a></li>
-                    <li><a href="#portfolio" class="text-base font-medium text-dark hover:text-primary transition-colors duration-300 relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all hover:before:w-full">Portfolio</a></li>
-                    <li><a href="#experience" class="text-base font-medium text-dark hover:text-primary transition-colors duration-300 relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all hover:before:w-full">Experience</a></li>
-                    <li><a href="#contact" class="bg-secondary text-white px-4 py-2 rounded-full font-medium shadow-md hover:bg-red-600 transition-all duration-300 transform hover:-translate-y-0.5">Contact</a></li>
+                    <li><a href="#about"
+                            class="text-base font-medium text-dark hover:text-primary transition-colors duration-300 relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all hover:before:w-full">About</a>
+                    </li>
+                    <li><a href="#skills"
+                            class="text-base font-medium text-dark hover:text-primary transition-colors duration-300 relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all hover:before:w-full">Skills</a>
+                    </li>
+                    <li><a href="#portfolio"
+                            class="text-base font-medium text-dark hover:text-primary transition-colors duration-300 relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all hover:before:w-full">Portfolio</a>
+                    </li>
+                    <li><a href="#experience"
+                            class="text-base font-medium text-dark hover:text-primary transition-colors duration-300 relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all hover:before:w-full">Experience</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="bg-secondary text-white px-4 py-2 rounded-full font-medium shadow-md hover:bg-red-600 transition-all duration-300 transform hover:-translate-y-0.5">Contact</a>
+                    </li>
                 </ul>
-                <div class="hamburger md:hidden flex flex-col justify-between w-8 h-5 cursor-pointer z-50" aria-label="Menu toggle">
+                <div class="hamburger md:hidden flex flex-col justify-between w-8 h-5 cursor-pointer z-50"
+                    aria-label="Menu toggle">
                     <span class="w-full h-0.5 bg-dark transition-all duration-300"></span>
                     <span class="w-full h-0.5 bg-dark transition-all duration-300"></span>
                     <span class="w-full h-0.5 bg-dark transition-all duration-300"></span>
@@ -211,44 +238,60 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="flex items-center relative pt-24 pb-16 min-h-screen bg-gradient-to-br from-light/90 to-blue-100/90 overflow-hidden">
+        <section id="hero"
+            class="flex items-center relative pt-24 pb-16 min-h-screen bg-gradient-to-br from-light/90 to-blue-100/90 overflow-hidden">
             <div class="container mx-auto px-4 md:px-8">
                 <div class="grid md:grid-cols-2 gap-10 items-center">
                     <div class="hero-content opacity-0 transform translate-y-8 transition-all duration-700 max-w-2xl">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">Hi, I'm <span class="text-primary">Austin Coveney</span></h1>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">Hi, I'm <span
+                                class="text-primary">Austin Coveney</span></h1>
                         <div class="typewriter flex text-xl md:text-2xl font-semibold mb-8 text-primary h-10">
-                            <span id="typewriter-text"></span><span class="cursor inline-block w-0.5 h-9 ml-1 bg-primary animate-blink">|</span>
+                            <span id="typewriter-text"></span><span
+                                class="cursor inline-block w-0.5 h-9 ml-1 bg-primary animate-blink">|</span>
                         </div>
-                        <p class="text-base md:text-lg mb-10 text-gray">Transforming business opportunities into successful ventures</p>
+                        <p class="text-base md:text-lg mb-10 text-gray">Transforming business opportunities into
+                            successful ventures</p>
                         <div class="flex flex-wrap gap-4">
-                            <a href="#portfolio" class="px-6 py-3 bg-primary text-white rounded-full font-medium shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary-dark">View My Work</a>
-                            <a href="#contact" class="px-6 py-3 bg-transparent text-primary border-2 border-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Let's Connect</a>
+                            <a href="#portfolio"
+                                class="px-6 py-3 bg-primary text-white rounded-full font-medium shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary-dark">View
+                                My Work</a>
+                            <a href="#contact"
+                                class="px-6 py-3 bg-transparent text-primary border-2 border-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Let's
+                                Connect</a>
                         </div>
                     </div>
-                    <div class="hero-image flex justify-center items-center opacity-0 transform translate-y-8 transition-all duration-700">
+                    <div
+                        class="hero-image flex justify-center items-center opacity-0 transform translate-y-8 transition-all duration-700">
                         <div class="relative w-64 h-64 md:w-72 md:h-72">
-                            <div class="absolute top-[-10px] left-[-10px] w-[calc(100%+20px)] h-[calc(100%+20px)] border-2 border-dashed border-primary rounded-full animate-rotate" id="profile-outline"></div>
-                            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg animate-float" id="profile-img">
-                                <img src="Images/austincoveney.jpg" alt="Austin Coveney professional headshot" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                            <div class="absolute top-[-10px] left-[-10px] w-[calc(100%+20px)] h-[calc(100%+20px)] border-2 border-dashed border-primary rounded-full animate-rotate"
+                                id="profile-outline"></div>
+                            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg animate-float"
+                                id="profile-img">
+                                <img src="Images/austincoveney.jpg" alt="Austin Coveney professional headshot"
+                                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="social-icons fixed left-4 md:left-8 bottom-4 md:bottom-8 flex gap-4 z-10">
-                <a href="https://linkedin.com/in/austin-coveney" aria-label="LinkedIn Profile" target="_blank" class="flex justify-center items-center w-10 h-10 bg-white rounded-full text-primary text-lg shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
+                <a href="https://linkedin.com/in/austin-coveney" aria-label="LinkedIn Profile" target="_blank"
+                    class="flex justify-center items-center w-10 h-10 bg-white rounded-full text-primary text-lg shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://instagram.com/austin.coveney" aria-label="Instagram Profile" target="_blank" class="flex justify-center items-center w-10 h-10 bg-white rounded-full text-primary text-lg shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
+                <a href="https://instagram.com/austin.coveney" aria-label="Instagram Profile" target="_blank"
+                    class="flex justify-center items-center w-10 h-10 bg-white rounded-full text-primary text-lg shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://github.com/austincoveney" aria-label="Instagram Profile" target="_blank" class="flex justify-center items-center w-10 h-10 bg-white rounded-full text-primary text-lg shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
+                <a href="https://github.com/austincoveney" aria-label="Instagram Profile" target="_blank"
+                    class="flex justify-center items-center w-10 h-10 bg-white rounded-full text-primary text-lg shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
-            
-            <div class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray cursor-pointer animate-bounce">
+
+            <div
+                class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray cursor-pointer animate-bounce">
                 <span class="text-sm mb-2">Scroll Down</span>
                 <i class="fas fa-chevron-down"></i>
             </div>
@@ -259,12 +302,20 @@
             <div class="container mx-auto px-4 md:px-8">
                 <div class="text-center mb-16">
                     <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">About Me</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">My Background & Experience</h2>
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">
+                        My Background & Experience</h2>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                     <div>
-                        <p class="text-gray mb-6">I'm a dynamic <span class="text-primary font-semibold">entrepreneur</span> with expertise in <span class="text-primary font-semibold">sales and marketing</span>. With experience across multiple businesses, I specialize in creating and scaling ventures while developing meaningful client relationships.</p>
-                        <p class="text-gray mb-8">My approach combines strategic business thinking with creative marketing solutions to drive growth. I thrive in fast-paced environments and enjoy taking on leadership roles in diverse business settings.</p>
+                        <p class="text-gray mb-6">I'm a dynamic <span
+                                class="text-primary font-semibold">entrepreneur</span> with expertise in <span
+                                class="text-primary font-semibold">sales and marketing</span>. With experience across
+                            multiple businesses, I specialize in creating and scaling ventures while developing
+                            meaningful client relationships.</p>
+                        <p class="text-gray mb-8">My approach combines strategic business thinking with creative
+                            marketing solutions to drive growth. I thrive in fast-paced environments and enjoy taking on
+                            leadership roles in diverse business settings.</p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
                             <div class="flex flex-col">
                                 <span class="font-semibold text-dark mb-2">Name:</span>
@@ -283,27 +334,36 @@
                                 <span class="text-gray">Full-time employment, Business partnerships, Consulting</span>
                             </div>
                         </div>
-                        <a href="Images/Austin Coveney CV.jpg" class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-full font-medium shadow-md transition-all duration-300 transform hover:-translate-y-1" id="download-cv" download>
-                            Download CV <i class="fas fa-download ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+                        <a href="Images/Austin Coveney CV.jpg"
+                            class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-full font-medium shadow-md transition-all duration-300 transform hover:-translate-y-1"
+                            id="download-cv" download>
+                            Download CV <i
+                                class="fas fa-download ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
                         </a>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-8 md:mt-0">
-                        <div class="bg-white rounded-lg p-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-lg relative overflow-hidden group">
-                            <div class="relative z-10 flex justify-center items-center w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full text-primary text-2xl transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
+                        <div
+                            class="bg-white rounded-lg p-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-lg relative overflow-hidden group">
+                            <div
+                                class="relative z-10 flex justify-center items-center w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full text-primary text-2xl transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
                                 <i class="fas fa-briefcase"></i>
                             </div>
                             <h3 class="text-3xl font-bold mb-2 relative z-10">3+</h3>
                             <p class="text-gray relative z-10">Years Experience</p>
                         </div>
-                        <div class="bg-white rounded-lg p-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-lg relative overflow-hidden group">
-                            <div class="relative z-10 flex justify-center items-center w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full text-primary text-2xl transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
+                        <div
+                            class="bg-white rounded-lg p-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-lg relative overflow-hidden group">
+                            <div
+                                class="relative z-10 flex justify-center items-center w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full text-primary text-2xl transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
                                 <i class="fas fa-building"></i>
                             </div>
                             <h3 class="text-3xl font-bold mb-2 relative z-10">3</h3>
                             <p class="text-gray relative z-10">Business Ventures</p>
                         </div>
-                        <div class="bg-white rounded-lg p-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-lg relative overflow-hidden group">
-                            <div class="relative z-10 flex justify-center items-center w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full text-primary text-2xl transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
+                        <div
+                            class="bg-white rounded-lg p-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-lg relative overflow-hidden group">
+                            <div
+                                class="relative z-10 flex justify-center items-center w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full text-primary text-2xl transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
                                 <i class="fas fa-handshake"></i>
                             </div>
                             <h3 class="text-3xl font-bold mb-2 relative z-10">2+</h3>
@@ -318,92 +378,126 @@
         <section id="skills" class="py-16 md:py-24 bg-light">
             <div class="container mx-auto px-4 md:px-8">
                 <div class="text-center mb-16">
-                    <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">My Specialties</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">My Skills & Expertise</h2>
+                    <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">My
+                        Specialties</span>
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">
+                        My Skills & Expertise</h2>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8 md:gap-12 mt-12">
                     <div class="md:col-span-1">
-                        <p class="text-gray mb-6 leading-relaxed">I've cultivated a diverse set of skills throughout my entrepreneurial journey. My expertise spans across business development, sales, and marketing, allowing me to approach ventures with a well-rounded perspective.</p>
-                        <p class="text-gray leading-relaxed">I continuously enhance my skills to stay current with market trends and business opportunities.</p>
+                        <p class="text-gray mb-6 leading-relaxed">I've cultivated a diverse set of skills throughout my
+                            entrepreneurial journey. My expertise spans across business development, sales, and
+                            marketing, allowing me to approach ventures with a well-rounded perspective.</p>
+                        <p class="text-gray leading-relaxed">I continuously enhance my skills to stay current with
+                            market trends and business opportunities.</p>
                     </div>
                     <div class="md:col-span-2 grid md:grid-cols-2 gap-8 md:gap-10">
                         <div class="skills-category">
-                            <h3 class="text-2xl font-bold mb-8 pb-4 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-primary after:rounded-full after:transition-all hover:after:w-full">Business Skills</h3>
+                            <h3
+                                class="text-2xl font-bold mb-8 pb-4 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-primary after:rounded-full after:transition-all hover:after:w-full">
+                                Business Skills</h3>
                             <div class="space-y-7">
                                 <div class="flex flex-wrap items-center">
                                     <span class="w-1/3 font-semibold text-lg text-dark">Sales</span>
                                     <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 95%;" data-progress="95"></div>
+                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 95%;"
+                                            data-progress="95"></div>
                                     </div>
                                     <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">95%</span>
                                 </div>
                                 <div class="flex flex-wrap items-center">
                                     <span class="w-1/3 font-semibold text-lg text-dark">Marketing</span>
                                     <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 90%;" data-progress="90"></div>
+                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 90%;"
+                                            data-progress="90"></div>
                                     </div>
                                     <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">90%</span>
                                 </div>
                                 <div class="flex flex-wrap items-center">
                                     <span class="w-1/3 font-semibold text-lg text-dark">Copywriting</span>
                                     <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 85%;" data-progress="85"></div>
+                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 85%;"
+                                            data-progress="85"></div>
                                     </div>
                                     <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">85%</span>
                                 </div>
                                 <div class="flex flex-wrap items-center">
                                     <span class="w-1/3 font-semibold text-lg text-dark">Business Dev</span>
                                     <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 90%;" data-progress="90"></div>
+                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 90%;"
+                                            data-progress="90"></div>
                                     </div>
                                     <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">90%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="skills-category">
-                            <h3 class="text-2xl font-bold mb-8 pb-4 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-primary after:rounded-full after:transition-all hover:after:w-full">Technical Skills</h3>
+                            <h3
+                                class="text-2xl font-bold mb-8 pb-4 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-primary after:rounded-full after:transition-all hover:after:w-full">
+                                Technical Skills</h3>
                             <div class="space-y-7">
                                 <div class="flex flex-wrap items-center">
                                     <span class="w-1/3 font-semibold text-lg text-dark">WordPress</span>
                                     <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 85%;" data-progress="85"></div>
+                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 85%;"
+                                            data-progress="85"></div>
                                     </div>
                                     <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">85%</span>
                                 </div>
                                 <div class="flex flex-wrap items-center">
                                     <span class="w-1/3 font-semibold text-lg text-dark">Figma</span>
                                     <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 80%;" data-progress="80"></div>
+                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 80%;"
+                                            data-progress="80"></div>
                                     </div>
                                     <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">80%</span>
                                 </div>
                                 <div class="flex flex-wrap items-center">
                                     <span class="w-1/3 font-semibold text-lg text-dark">Elementor</span>
                                     <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 85%;" data-progress="85"></div>
+                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 85%;"
+                                            data-progress="85"></div>
                                     </div>
                                     <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">85%</span>
                                 </div>
                                 <div class="flex flex-wrap items-center">
                                     <span class="w-1/3 font-semibold text-lg text-dark">Google Analytics</span>
                                     <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 75%;" data-progress="75"></div>
+                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 75%;"
+                                            data-progress="75"></div>
                                     </div>
                                     <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">75%</span>
                                 </div>
                             </div>
                         </div>
                         <div class="md:col-span-2">
-                            <h3 class="text-2xl font-bold mb-8 pb-4 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-primary after:rounded-full after:transition-all hover:after:w-full">Soft Skills</h3>
+                            <h3
+                                class="text-2xl font-bold mb-8 pb-4 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-primary after:rounded-full after:transition-all hover:after:w-full">
+                                Soft Skills</h3>
                             <div class="flex flex-wrap gap-3">
-                                <span class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Team Leadership</span>
-                                <span class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Staff Communication</span>
-                                <span class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Time Management</span>
-                                <span class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Conflict Resolution</span>
-                                <span class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Client Relations</span>
-                                <span class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Strategic Thinking</span>
-                                <span class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Adaptability</span>
-                                <span class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Creativity</span>
+                                <span
+                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Team
+                                    Leadership</span>
+                                <span
+                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Staff
+                                    Communication</span>
+                                <span
+                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Time
+                                    Management</span>
+                                <span
+                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Conflict
+                                    Resolution</span>
+                                <span
+                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Client
+                                    Relations</span>
+                                <span
+                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Strategic
+                                    Thinking</span>
+                                <span
+                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Adaptability</span>
+                                <span
+                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Creativity</span>
                             </div>
                         </div>
                     </div>
@@ -415,75 +509,110 @@
         <section id="portfolio" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4 md:px-8">
                 <div class="text-center mb-16">
-                    <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">My Recent Work</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">Featured Projects</h2>
+                    <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">My Recent
+                        Work</span>
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">
+                        Featured Projects</h2>
                 </div>
                 <div class="flex justify-center flex-wrap gap-4 mb-12">
-                    <button class="filter-btn bg-primary text-white px-4 py-2 rounded-full font-medium shadow-md transform transition-all duration-300 hover:-translate-y-1" data-filter="all">All</button>
-                    <button class="filter-btn bg-transparent text-gray border border-gray-light px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1" data-filter="business">Business Ventures</button>
-                    <button class="filter-btn bg-transparent text-gray border border-gray-light px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1" data-filter="marketing">Marketing</button>
-                    <button class="filter-btn bg-transparent text-gray border border-gray-light px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1" data-filter="events">Events</button>
+                    <button
+                        class="filter-btn bg-primary text-white px-4 py-2 rounded-full font-medium shadow-md transform transition-all duration-300 hover:-translate-y-1"
+                        data-filter="all">All</button>
+                    <button
+                        class="filter-btn bg-transparent text-gray border border-gray-light px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1"
+                        data-filter="business">Business Ventures</button>
+                    <button
+                        class="filter-btn bg-transparent text-gray border border-gray-light px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1"
+                        data-filter="marketing">Marketing</button>
+                    <button
+                        class="filter-btn bg-transparent text-gray border border-gray-light px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1"
+                        data-filter="events">Events</button>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     <!-- Project 1 -->
-                    <div class="portfolio-item block relative rounded-lg overflow-hidden shadow-md h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="business">
+                    <div class="portfolio-item block relative rounded-lg overflow-hidden shadow-md h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                        data-category="business">
                         <div class="w-full h-full">
-                            <img src="Images/Screenshot 2025-03-19 171942.jpg.png" alt="Basecamp Airsoft Ltd" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <img src="Images/Screenshot 2025-03-19 171942.jpg.png" alt="Basecamp Airsoft Ltd"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-dark/90 flex justify-center items-center opacity-0 transition-opacity duration-300">
-                            <div class="portfolio-info text-center text-white p-8 transform translate-y-5 transition-transform duration-300 w-full">
+                        <div
+                            class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-dark/90 flex justify-center items-center opacity-0 transition-opacity duration-300">
+                            <div
+                                class="portfolio-info text-center text-white p-8 transform translate-y-5 transition-transform duration-300 w-full">
                                 <h3 class="text-2xl text-white mb-2">Basecamp Airsoft Ltd</h3>
                                 <p class="text-gray-light mb-6">Ticket Sales Business</p>
                                 <div class="flex justify-center">
-                                    <a href="javascript:void(0)" class="px-4 py-2 bg-primary text-white rounded-full font-medium transition-all duration-300 hover:-translate-y-1 project-modal-trigger" data-project="basecamp">Read More</a>
+                                    <a href="javascript:void(0)"
+                                        class="px-4 py-2 bg-primary text-white rounded-full font-medium transition-all duration-300 hover:-translate-y-1 project-modal-trigger"
+                                        data-project="basecamp">Read More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Project 2 -->
-                    <div class="portfolio-item block relative rounded-lg overflow-hidden shadow-md h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="marketing">
+                    <div class="portfolio-item block relative rounded-lg overflow-hidden shadow-md h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                        data-category="marketing">
                         <div class="w-full h-full">
-                            <img src="Images/final-01.jpg" alt="DigiGrow LTD" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <img src="Images/final-01.jpg" alt="DigiGrow LTD"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-dark/90 flex justify-center items-center opacity-0 transition-opacity duration-300">
-                            <div class="portfolio-info text-center text-white p-8 transform translate-y-5 transition-transform duration-300 w-full">
+                        <div
+                            class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-dark/90 flex justify-center items-center opacity-0 transition-opacity duration-300">
+                            <div
+                                class="portfolio-info text-center text-white p-8 transform translate-y-5 transition-transform duration-300 w-full">
                                 <h3 class="text-2xl text-white mb-2">DigiGrow LTD</h3>
                                 <p class="text-gray-light mb-6">Digital Marketing Agency</p>
                                 <div class="flex justify-center">
-                                    <a href="javascript:void(0)" class="px-4 py-2 bg-primary text-white rounded-full font-medium transition-all duration-300 hover:-translate-y-1 project-modal-trigger" data-project="digigrow">Read More</a>
+                                    <a href="javascript:void(0)"
+                                        class="px-4 py-2 bg-primary text-white rounded-full font-medium transition-all duration-300 hover:-translate-y-1 project-modal-trigger"
+                                        data-project="digigrow">Read More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Project 3 -->
-                    <div class="portfolio-item block relative rounded-lg overflow-hidden shadow-md h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="events">
+                    <div class="portfolio-item block relative rounded-lg overflow-hidden shadow-md h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                        data-category="events">
                         <div class="w-full h-full">
-                            <img src="Images/Screenshot 2025-03-19 171803.jpg.png" alt="Young Innovators Project" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <img src="Images/Screenshot 2025-03-19 171803.jpg.png" alt="Young Innovators Project"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-dark/90 flex justify-center items-center opacity-0 transition-opacity duration-300">
-                            <div class="portfolio-info text-center text-white p-8 transform translate-y-5 transition-transform duration-300 w-full">
+                        <div
+                            class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-dark/90 flex justify-center items-center opacity-0 transition-opacity duration-300">
+                            <div
+                                class="portfolio-info text-center text-white p-8 transform translate-y-5 transition-transform duration-300 w-full">
                                 <h3 class="text-2xl text-white mb-2">Young Innovators Project</h3>
                                 <p class="text-gray-light mb-6">Youth Business Development</p>
                                 <div class="flex justify-center">
-                                    <a href="javascript:void(0)" class="px-4 py-2 bg-primary text-white rounded-full font-medium transition-all duration-300 hover:-translate-y-1 project-modal-trigger" data-project="yip">Read More</a>
+                                    <a href="javascript:void(0)"
+                                        class="px-4 py-2 bg-primary text-white rounded-full font-medium transition-all duration-300 hover:-translate-y-1 project-modal-trigger"
+                                        data-project="yip">Read More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Project 4 -->
-                    <div class="portfolio-item block relative rounded-lg overflow-hidden shadow-md h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="business">
+                    <div class="portfolio-item block relative rounded-lg overflow-hidden shadow-md h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                        data-category="business">
                         <div class="w-full h-full">
-                            <img src="Images/thatched-tavern-logo-dark.png.jpg" alt="The Thatched Tavern Management" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <img src="Images/thatched-tavern-logo-dark.png.jpg" alt="The Thatched Tavern Management"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <div class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-dark/90 flex justify-center items-center opacity-0 transition-opacity duration-300">
-                            <div class="portfolio-info text-center text-white p-8 transform translate-y-5 transition-transform duration-300 w-full">
+                        <div
+                            class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-dark/90 flex justify-center items-center opacity-0 transition-opacity duration-300">
+                            <div
+                                class="portfolio-info text-center text-white p-8 transform translate-y-5 transition-transform duration-300 w-full">
                                 <h3 class="text-2xl text-white mb-2">The Thatched Tavern</h3>
                                 <p class="text-gray-light mb-6">Hospitality Management</p>
                                 <div class="flex justify-center">
-                                    <a href="javascript:void(0)" class="px-4 py-2 bg-primary text-white rounded-full font-medium transition-all duration-300 hover:-translate-y-1 project-modal-trigger" data-project="tavern">Read More</a>
+                                    <a href="javascript:void(0)"
+                                        class="px-4 py-2 bg-primary text-white rounded-full font-medium transition-all duration-300 hover:-translate-y-1 project-modal-trigger"
+                                        data-project="tavern">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -497,157 +626,230 @@
             <div class="container mx-auto px-4 md:px-8">
                 <div class="text-center mb-16">
                     <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">My Journey</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">Education & Experience</h2>
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">
+                        Education & Experience</h2>
                 </div>
                 <div class="max-w-4xl mx-auto">
                     <div class="flex justify-center gap-6 mb-16">
-                        <button id="tab-experience" class="timeline-tab bg-primary text-white px-5 py-3 rounded-full font-medium shadow-md transition-all duration-300 hover:-translate-y-1" data-tab="experience">Experience</button>
-                        <button id="tab-education" class="timeline-tab bg-transparent text-gray border border-gray-light px-5 py-3 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1" data-tab="education">Education</button>
+                        <button id="tab-experience"
+                            class="timeline-tab bg-primary text-white px-5 py-3 rounded-full font-medium shadow-md transition-all duration-300 hover:-translate-y-1"
+                            data-tab="experience">Experience</button>
+                        <button id="tab-education"
+                            class="timeline-tab bg-transparent text-gray border border-gray-light px-5 py-3 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1"
+                            data-tab="education">Education</button>
                     </div>
-                    
+
                     <!-- Experience Timeline -->
                     <div class="timeline timeline-line relative block" id="experience-timeline">
                         <!-- Experience 1 -->
                         <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
+                            <div
+                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
                                 <i class="fas fa-briefcase"></i>
                             </div>
-                            <div class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                            <div
+                                class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                                 <span class="text-sm font-medium text-primary mb-4 block">2024 - Present</span>
                                 <h3 class="text-2xl mb-2">Co-Partner</h3>
                                 <h4 class="text-base font-medium text-gray mb-6">The Young Innovators Project</h4>
-                                <p class="text-gray mb-6">Running a project with Farnborough councillors and the mayor to organize and sell events aimed at helping people aged 13-25 get into business. Managing sales and organization, developing business communication skills.</p>
+                                <p class="text-gray mb-6">Running a project with Farnborough councillors and the mayor
+                                    to organize and sell events aimed at helping people aged 13-25 get into business.
+                                    Managing sales and organization, developing business communication skills.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Event Planning</span>
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Sales</span>
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Youth Entrepreneurship</span>
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Public Relations</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Event
+                                        Planning</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Sales</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Youth
+                                        Entrepreneurship</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Public
+                                        Relations</span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Experience 2 -->
                         <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
+                            <div
+                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
                                 <i class="fas fa-briefcase"></i>
                             </div>
-                            <div class="timeline-content timeline-content-even relative w-full md:w-5/12 ml-16 md:ml-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                            <div
+                                class="timeline-content timeline-content-even relative w-full md:w-5/12 ml-16 md:ml-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                                 <span class="text-sm font-medium text-primary mb-4 block">Sept 2024 - Present</span>
                                 <h3 class="text-2xl mb-2">Company Director</h3>
                                 <h4 class="text-base font-medium text-gray mb-6">DigiGrow LTD</h4>
-                                <p class="text-gray mb-6">Co-running a digital marketing company focused on creating and managing marketing for my own business and other clients. Developing skills in sales and client education while building a strong portfolio.</p>
+                                <p class="text-gray mb-6">Co-running a digital marketing company focused on creating and
+                                    managing marketing for my own business and other clients. Developing skills in sales
+                                    and client education while building a strong portfolio.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Digital Marketing</span>
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Client Relations</span>
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Social Media</span>
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Copywriting</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Digital
+                                        Marketing</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Client
+                                        Relations</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Social
+                                        Media</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Copywriting</span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Experience 3 -->
                         <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
+                            <div
+                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
                                 <i class="fas fa-briefcase"></i>
                             </div>
-                            <div class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                            <div
+                                class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                                 <span class="text-sm font-medium text-primary mb-4 block">Aug 2024 - Present</span>
                                 <h3 class="text-2xl mb-2">Company Director</h3>
                                 <h4 class="text-base font-medium text-gray mb-6">Basecamp Airsoft Ltd</h4>
-                                <p class="text-gray mb-6">Running an Airsoft ticket sales startup, learning to unionize businesses and sell to them effectively. Developing resource management optimization skills and implementing quick, calculated thinking to benefit the business.</p>
+                                <p class="text-gray mb-6">Running an Airsoft ticket sales startup, learning to unionize
+                                    businesses and sell to them effectively. Developing resource management optimization
+                                    skills and implementing quick, calculated thinking to benefit the business.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Business Development</span>
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Sales Strategy</span>
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Resource Management</span>
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">B2B Relations</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Business
+                                        Development</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Sales
+                                        Strategy</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Resource
+                                        Management</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">B2B
+                                        Relations</span>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Experience 4 -->
                         <div class="timeline-item relative opacity-0 translate-y-5 transition-all duration-500">
-                            <div class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
+                            <div
+                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
                                 <i class="fas fa-briefcase"></i>
                             </div>
-                            <div class="timeline-content timeline-content-even relative w-full md:w-5/12 ml-16 md:ml-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                            <div
+                                class="timeline-content timeline-content-even relative w-full md:w-5/12 ml-16 md:ml-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                                 <span class="text-sm font-medium text-primary mb-4 block">2022 - Present</span>
                                 <h3 class="text-2xl mb-2">Server</h3>
                                 <h4 class="text-base font-medium text-gray mb-6">The Thatched Tavern</h4>
-                                <p class="text-gray mb-6">Working at The Thatched Tavern for 3 years, developing customer service skills and team management abilities. Advanced to management role, gaining deeper insight into effective communication and sales in the hospitality industry.</p>
+                                <p class="text-gray mb-6">Working at The Thatched Tavern for 3 years, developing
+                                    customer service skills and team management abilities. Advanced to management role,
+                                    gaining deeper insight into effective communication and sales in the hospitality
+                                    industry.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Team Management</span>
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Customer Service</span>
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Staff Communication</span>
-                                    <span class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Conflict Resolution</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Team
+                                        Management</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Customer
+                                        Service</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Staff
+                                        Communication</span>
+                                    <span
+                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Conflict
+                                        Resolution</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Education Timeline -->
                     <div class="timeline timeline-line relative hidden" id="education-timeline">
                         <!-- Education 1 -->
                         <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
+                            <div
+                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                            <div
+                                class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                                 <span class="text-sm font-medium text-primary mb-4 block">2023 - 2025</span>
                                 <h3 class="text-2xl mb-2">BTEC Business</h3>
                                 <h4 class="text-base font-medium text-gray mb-6">The Sixth Form College Farnborough</h4>
-                                <p class="text-gray">Studying business operations, marketing strategies, and management principles to build a strong foundation for entrepreneurial ventures.</p>
+                                <p class="text-gray">Studying business operations, marketing strategies, and management
+                                    principles to build a strong foundation for entrepreneurial ventures.</p>
                             </div>
                         </div>
-                        
+
                         <!-- Education 2 -->
                         <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
+                            <div
+                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="timeline-content timeline-content-even relative w-full md:w-5/12 ml-16 md:ml-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                            <div
+                                class="timeline-content timeline-content-even relative w-full md:w-5/12 ml-16 md:ml-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                                 <span class="text-sm font-medium text-primary mb-4 block">2023 - 2025</span>
                                 <h3 class="text-2xl mb-2">BTEC Law</h3>
                                 <h4 class="text-base font-medium text-gray mb-6">The Sixth Form College Farnborough</h4>
-                                <p class="text-gray">Learning about legal frameworks, business regulations, and contractual obligations essential for running successful and compliant business operations.</p>
+                                <p class="text-gray">Learning about legal frameworks, business regulations, and
+                                    contractual obligations essential for running successful and compliant business
+                                    operations.</p>
                             </div>
                         </div>
-                        
+
                         <!-- Education 3 -->
                         <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
+                            <div
+                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <div class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                            <div
+                                class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                                 <span class="text-sm font-medium text-primary mb-4 block">2023 - 2025</span>
                                 <h3 class="text-2xl mb-2">BTEC IT</h3>
                                 <h4 class="text-base font-medium text-gray mb-6">The Sixth Form College Farnborough</h4>
-                                <p class="text-gray">Developing technical skills in information technology with applications for digital marketing, data analysis, and modern business operations.</p>
+                                <p class="text-gray">Developing technical skills in information technology with
+                                    applications for digital marketing, data analysis, and modern business operations.
+                                </p>
                             </div>
                         </div>
-                        
+
                         <!-- Education 4 -->
                         <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
+                            <div
+                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
                                 <i class="fas fa-certificate"></i>
                             </div>
-                            <div class="timeline-content timeline-content-even relative w-full md:w-5/12 ml-16 md:ml-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                            <div
+                                class="timeline-content timeline-content-even relative w-full md:w-5/12 ml-16 md:ml-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                                 <span class="text-sm font-medium text-primary mb-4 block">2024</span>
                                 <h3 class="text-2xl mb-2">Business Management</h3>
                                 <h4 class="text-base font-medium text-gray mb-6">Self-Directed Learning</h4>
-                                <p class="text-gray">Self-directed learning in business management strategies, marketing techniques, and sales approaches through practical experience running multiple businesses and studying industry best practices.</p>
+                                <p class="text-gray">Self-directed learning in business management strategies, marketing
+                                    techniques, and sales approaches through practical experience running multiple
+                                    businesses and studying industry best practices.</p>
                             </div>
                         </div>
-                        
+
                         <!-- Education 5 -->
                         <div class="timeline-item relative opacity-0 translate-y-5 transition-all duration-500">
-                            <div class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
+                            <div
+                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
                                 <i class="fas fa-laptop"></i>
                             </div>
-                            <div class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                            <div
+                                class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                                 <span class="text-sm font-medium text-primary mb-4 block">2023</span>
                                 <h3 class="text-2xl mb-2">Digital Marketing</h3>
-                                <h4 class="text-base font-medium text-gray mb-6">Online Courses & Practical Experience</h4>
-                                <p class="text-gray">Developed digital marketing skills through a combination of online courses and practical application in real-world business scenarios, particularly focusing on social media marketing and copywriting.</p>
+                                <h4 class="text-base font-medium text-gray mb-6">Online Courses & Practical Experience
+                                </h4>
+                                <p class="text-gray">Developed digital marketing skills through a combination of online
+                                    courses and practical application in real-world business scenarios, particularly
+                                    focusing on social media marketing and copywriting.</p>
                             </div>
                         </div>
                     </div>
@@ -659,18 +861,24 @@
         <section id="contact" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4 md:px-8">
                 <div class="text-center mb-16">
-                    <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">Get In Touch</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">Contact Me</h2>
+                    <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">Get In
+                        Touch</span>
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">
+                        Contact Me</h2>
                 </div>
                 <div class="grid md:grid-cols-2 gap-8 md:gap-12">
                     <div>
                         <div class="mb-10">
                             <h3 class="text-2xl md:text-3xl font-bold mb-4">Let's Work Together</h3>
-                            <p class="text-gray">I'm interested in full-time employment, business partnerships, collaborations, and consulting opportunities. If you have a project that needs marketing strategy or sales expertise, please don't hesitate to contact me.</p>
+                            <p class="text-gray">I'm interested in full-time employment, business partnerships,
+                                collaborations, and consulting opportunities. If you have a project that needs marketing
+                                strategy or sales expertise, please don't hesitate to contact me.</p>
                         </div>
                         <div class="space-y-8 mb-10">
                             <div class="flex items-start gap-5 group">
-                                <div class="flex justify-center items-center w-12 h-12 bg-blue-100 rounded-full text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                                <div
+                                    class="flex justify-center items-center w-12 h-12 bg-blue-100 rounded-full text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
@@ -679,61 +887,87 @@
                                 </div>
                             </div>
                             <div class="flex items-start gap-5 group">
-                                <div class="flex justify-center items-center w-12 h-12 bg-blue-100 rounded-full text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                                <div
+                                    class="flex justify-center items-center w-12 h-12 bg-blue-100 rounded-full text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-lg font-medium mb-2">Email</h4>
-                                    <p><a href="mailto:austin@austincoveney.uk" class="text-gray hover:text-primary transition-colors duration-300">austin@austincoveney.uk</a></p>
+                                    <p><a href="mailto:austin@austincoveney.uk"
+                                            class="text-gray hover:text-primary transition-colors duration-300">austin@austincoveney.uk</a>
+                                    </p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-5 group">
-                                <div class="flex justify-center items-center w-12 h-12 bg-blue-100 rounded-full text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                                <div
+                                    class="flex justify-center items-center w-12 h-12 bg-blue-100 rounded-full text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
                                     <i class="fas fa-phone-alt"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-lg font-medium mb-2">Phone</h4>
-                                    <p><a href="tel:+447944199916" class="text-gray hover:text-primary transition-colors duration-300">+44 7944 199916</a></p>
+                                    <p><a href="tel:+447944199916"
+                                            class="text-gray hover:text-primary transition-colors duration-300">+44 7944
+                                            199916</a></p>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <h4 class="text-lg font-medium mb-4">Find Me On</h4>
                             <div class="flex gap-4">
-                                <a href="https://linkedin.com/in/austin-coveney" aria-label="LinkedIn Profile" target="_blank" class="flex justify-center items-center w-12 h-12 bg-white rounded-full text-primary text-xl shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
+                                <a href="https://linkedin.com/in/austin-coveney" aria-label="LinkedIn Profile"
+                                    target="_blank"
+                                    class="flex justify-center items-center w-12 h-12 bg-white rounded-full text-primary text-xl shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
-                                <a href="https://instagram.com/austin.coveney" aria-label="Instagram Profile" target="_blank" class="flex justify-center items-center w-12 h-12 bg-white rounded-full text-primary text-xl shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
+                                <a href="https://instagram.com/austin.coveney" aria-label="Instagram Profile"
+                                    target="_blank"
+                                    class="flex justify-center items-center w-12 h-12 bg-white rounded-full text-primary text-xl shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="https://github.com/austincoveney" aria-label="Instagram Profile" target="_blank" class="flex justify-center items-center w-12 h-12 bg-white rounded-full text-primary text-xl shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
+                                <a href="https://github.com/austincoveney" aria-label="Instagram Profile"
+                                    target="_blank"
+                                    class="flex justify-center items-center w-12 h-12 bg-white rounded-full text-primary text-xl shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-light rounded-lg p-8 md:p-12 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xzzedvol" method="POST">
+                    <div
+                        class="bg-light rounded-lg p-8 md:p-12 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xzzedvol"
+                            method="POST">
                             <div class="relative mb-8">
-                                <input type="text" id="name" name="name" placeholder=" " required class="w-full py-4 px-5 bg-white rounded-md text-dark font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent border border-gray-light">
-                                <label for="name" class="absolute top-1/2 left-5 -translate-y-1/2 text-gray font-medium transition-all duration-300 pointer-events-none">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder=" " required
+                                    class="w-full py-4 px-5 bg-white rounded-md text-dark font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent border border-gray-light">
+                                <label for="name"
+                                    class="absolute top-1/2 left-5 -translate-y-1/2 text-gray font-medium transition-all duration-300 pointer-events-none">Your
+                                    Name</label>
                             </div>
                             <div class="relative mb-8">
-                                <input type="email" id="email" name="email" placeholder=" " required class="w-full py-4 px-5 bg-white rounded-md text-dark font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent border border-gray-light">
-                                <label for="email" class="absolute top-1/2 left-5 -translate-y-1/2 text-gray font-medium transition-all duration-300 pointer-events-none">Your Email</label>
+                                <input type="email" id="email" name="email" placeholder=" " required
+                                    class="w-full py-4 px-5 bg-white rounded-md text-dark font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent border border-gray-light">
+                                <label for="email"
+                                    class="absolute top-1/2 left-5 -translate-y-1/2 text-gray font-medium transition-all duration-300 pointer-events-none">Your
+                                    Email</label>
                             </div>
                             <div class="relative mb-8">
-                                <input type="text" id="subject" name="subject" placeholder=" " required class="w-full py-4 px-5 bg-white rounded-md text-dark font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent border border-gray-light">
-                                <label for="subject" class="absolute top-1/2 left-5 -translate-y-1/2 text-gray font-medium transition-all duration-300 pointer-events-none">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder=" " required
+                                    class="w-full py-4 px-5 bg-white rounded-md text-dark font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent border border-gray-light">
+                                <label for="subject"
+                                    class="absolute top-1/2 left-5 -translate-y-1/2 text-gray font-medium transition-all duration-300 pointer-events-none">Subject</label>
                             </div>
                             <div class="relative mb-8">
-                                <textarea id="message" name="message" placeholder=" " required class="w-full py-4 px-5 h-40 bg-white rounded-md text-dark font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none border border-gray-light"></textarea>
-                                <label for="message" class="absolute top-6 left-5 text-gray font-medium transition-all duration-300 pointer-events-none">Your Message</label>
+                                <textarea id="message" name="message" placeholder=" " required
+                                    class="w-full py-4 px-5 h-40 bg-white rounded-md text-dark font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none border border-gray-light"></textarea>
+                                <label for="message"
+                                    class="absolute top-6 left-5 text-gray font-medium transition-all duration-300 pointer-events-none">Your
+                                    Message</label>
                             </div>
-                            <button type="submit" class="w-full px-6 py-3 bg-primary text-white rounded-full font-medium shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-primary-dark relative overflow-hidden form-submit">
+                            <button type="submit"
+                                class="w-full px-6 py-3 bg-primary text-white rounded-full font-medium shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-primary-dark relative overflow-hidden form-submit">
                                 Send Message <i class="fas fa-paper-plane ml-2"></i>
                             </button>
-                            
+
                             <p id="form-status" class="mt-4 text-center hidden"></p>
                         </form>
                     </div>
@@ -743,24 +977,38 @@
     </main>
 
     <footer class="bg-dark text-white py-12 md:py-16 relative">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent bg-[length:300%_100%]" id="footer-gradient"></div>
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent bg-[length:300%_100%]"
+            id="footer-gradient"></div>
         <div class="container mx-auto px-4 md:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex flex-col items-center md:items-start">
-                    <a href="#hero" class="text-2xl font-bold text-white font-serif relative inline-block hover:after:w-full after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-white after:transition-all after:duration-300">AC</a>
-                    <p class="text-sm text-gray mt-4">&copy; <span id="current-year"></span> Austin Coveney. All rights reserved.</p>
+                    <a href="#hero"
+                        class="text-2xl font-bold text-white font-serif relative inline-block hover:after:w-full after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-white after:transition-all after:duration-300">AC</a>
+                    <p class="text-sm text-gray mt-4">&copy; <span id="current-year"></span> Austin Coveney. All rights
+                        reserved.</p>
                 </div>
                 <div>
                     <ul class="flex flex-wrap justify-center gap-4 md:gap-5">
-                        <li><a href="#about" class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">About</a></li>
-                        <li><a href="#skills" class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">Skills</a></li>
-                        <li><a href="#portfolio" class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">Portfolio</a></li>
-                        <li><a href="#experience" class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">Experience</a></li>
-                        <li><a href="#contact" class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">Contact</a></li>
+                        <li><a href="#about"
+                                class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">About</a>
+                        </li>
+                        <li><a href="#skills"
+                                class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">Skills</a>
+                        </li>
+                        <li><a href="#portfolio"
+                                class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">Portfolio</a>
+                        </li>
+                        <li><a href="#experience"
+                                class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">Experience</a>
+                        </li>
+                        <li><a href="#contact"
+                                class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">Contact</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
-                    <a href="#hero" aria-label="Back to top" class="flex justify-center items-center w-12 h-12 bg-dark-light rounded-full text-primary text-xl transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
+                    <a href="#hero" aria-label="Back to top"
+                        class="flex justify-center items-center w-12 h-12 bg-dark-light rounded-full text-primary text-xl transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
                         <i class="fas fa-arrow-up"></i>
                     </a>
                 </div>
@@ -769,11 +1017,14 @@
     </footer>
 
     <!-- Project Modal Popups -->
-    <div class="fixed top-0 left-0 w-full h-full bg-dark/80 flex justify-center items-center z-50 opacity-0 invisible transition-all duration-300 backdrop-blur-sm" id="project-modal">
-        <div class="w-11/12 max-w-3xl max-h-[90vh] bg-white rounded-lg shadow-2xl overflow-hidden relative scale-90 translate-y-8 transition-transform duration-500">
+    <div class="fixed top-0 left-0 w-full h-full bg-dark/80 flex justify-center items-center z-50 opacity-0 invisible transition-all duration-300 backdrop-blur-sm"
+        id="project-modal">
+        <div
+            class="w-11/12 max-w-3xl max-h-[90vh] bg-white rounded-lg shadow-2xl overflow-hidden relative scale-90 translate-y-8 transition-transform duration-500">
             <div class="p-6 bg-primary text-white flex justify-between items-center">
                 <h3 id="modal-title" class="text-2xl font-bold text-white m-0">Project Details</h3>
-                <button class="modal-close bg-transparent border-0 text-white text-2xl cursor-pointer transition-transform duration-300 hover:rotate-90">
+                <button
+                    class="modal-close bg-transparent border-0 text-white text-2xl cursor-pointer transition-transform duration-300 hover:rotate-90">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -781,7 +1032,8 @@
                 <!-- Content will be inserted dynamically -->
             </div>
             <div class="p-6 bg-light flex justify-end">
-                <button class="modal-close px-6 py-3 bg-transparent text-primary border-2 border-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white">Close</button>
+                <button
+                    class="modal-close px-6 py-3 bg-transparent text-primary border-2 border-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white">Close</button>
             </div>
         </div>
     </div>
@@ -790,4 +1042,5 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/motion@latest/+esm"></script>
     <script src="index.mjs" type="module"></script>
 </body>
+
 </html>

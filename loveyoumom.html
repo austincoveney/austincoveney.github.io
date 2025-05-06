@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>For Mom, With Love</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-        <style>:root
-        {
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For Mom, With Love</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
             --primary-color: #e5749e;
             --secondary-color: #f8c8dc;
             --accent-color: #9c5a8b;
@@ -103,9 +106,11 @@
             0% {
                 background-position: 0 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
+
             100% {
                 background-position: 0 50%;
             }
@@ -189,10 +194,12 @@
         }
 
         @keyframes float {
+
             0,
             100% {
                 transform: translateY(0) rotate(0deg);
             }
+
             50% {
                 transform: translateY(-20px) rotate(5deg);
             }
@@ -271,6 +278,7 @@
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
@@ -596,6 +604,7 @@
                 transform: translateY(0) rotate(0deg);
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(100vh) rotate(360deg);
                 opacity: 0;
@@ -657,35 +666,39 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <div
-            class="card" id="card">
+        <div class="card" id="card">
             <!-- Card Front -->
-            <div
-                class="card-front">
+            <div class="card-front">
                 <!-- Decorative elements -->
-                <div
-                    class="card-decorations">
+                <div class="card-decorations">
                     <!-- Flower 1 -->
-                    <svg class="floating-element flower-1" viewbox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12,2C13.85,2 15.55,2.78 16.9,4.1C18.22,5.42 19,7.15 19,9C19,10.85 18.22,12.58 16.9,13.9C15.58,15.22 13.85,16 12,16C10.15,16 8.42,15.22 7.1,13.9C5.78,12.58 5,10.85 5,9C5,7.15 5.78,5.42 7.1,4.1C8.45,2.78 10.15,2 12,2M12,4C10.69,4 9.45,4.5 8.4,5.4C7.5,6.45 7,7.69 7,9C7,10.31 7.5,11.55 8.4,12.6C9.45,13.5 10.69,14 12,14C13.31,14 14.55,13.5 15.6,12.6C16.5,11.55 17,10.31 17,9C17,7.69 16.5,6.45 15.6,5.4C14.55,4.5 13.31,4 12,4M12,6C12.83,6 13.5,6.67 13.5,7.5C13.5,8.33 12.83,9 12,9C11.17,9 10.5,8.33 10.5,7.5C10.5,6.67 11.17,6 12,6M7.5,10.5C8.33,10.5 9,11.17 9,12C9,12.83 8.33,13.5 7.5,13.5C6.67,13.5 6,12.83 6,12C6,11.17 6.67,10.5 7.5,10.5M16.5,10.5C17.33,10.5 18,11.17 18,12C18,12.83 17.33,13.5 16.5,13.5C15.67,13.5 15,12.83 15,12C15,11.17 15.67,10.5 16.5,10.5M12,12C12.83,12 13.5,12.67 13.5,13.5C13.5,14.33 12.83,15 12,15C11.17,15 10.5,14.33 10.5,13.5C10.5,12.67 11.17,12 12,12Z"/>
+                    <svg class="floating-element flower-1" viewbox="0 0 24 24" fill="white"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12,2C13.85,2 15.55,2.78 16.9,4.1C18.22,5.42 19,7.15 19,9C19,10.85 18.22,12.58 16.9,13.9C15.58,15.22 13.85,16 12,16C10.15,16 8.42,15.22 7.1,13.9C5.78,12.58 5,10.85 5,9C5,7.15 5.78,5.42 7.1,4.1C8.45,2.78 10.15,2 12,2M12,4C10.69,4 9.45,4.5 8.4,5.4C7.5,6.45 7,7.69 7,9C7,10.31 7.5,11.55 8.4,12.6C9.45,13.5 10.69,14 12,14C13.31,14 14.55,13.5 15.6,12.6C16.5,11.55 17,10.31 17,9C17,7.69 16.5,6.45 15.6,5.4C14.55,4.5 13.31,4 12,4M12,6C12.83,6 13.5,6.67 13.5,7.5C13.5,8.33 12.83,9 12,9C11.17,9 10.5,8.33 10.5,7.5C10.5,6.67 11.17,6 12,6M7.5,10.5C8.33,10.5 9,11.17 9,12C9,12.83 8.33,13.5 7.5,13.5C6.67,13.5 6,12.83 6,12C6,11.17 6.67,10.5 7.5,10.5M16.5,10.5C17.33,10.5 18,11.17 18,12C18,12.83 17.33,13.5 16.5,13.5C15.67,13.5 15,12.83 15,12C15,11.17 15.67,10.5 16.5,10.5M12,12C12.83,12 13.5,12.67 13.5,13.5C13.5,14.33 12.83,15 12,15C11.17,15 10.5,14.33 10.5,13.5C10.5,12.67 11.17,12 12,12Z" />
                     </svg>
 
                     <!-- Flower 2 -->
-                    <svg class="floating-element flower-2" viewbox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12,2C13.85,2 15.55,2.78 16.9,4.1C18.22,5.42 19,7.15 19,9C19,10.85 18.22,12.58 16.9,13.9C15.58,15.22 13.85,16 12,16C10.15,16 8.42,15.22 7.1,13.9C5.78,12.58 5,10.85 5,9C5,7.15 5.78,5.42 7.1,4.1C8.45,2.78 10.15,2 12,2M12,4C10.69,4 9.45,4.5 8.4,5.4C7.5,6.45 7,7.69 7,9C7,10.31 7.5,11.55 8.4,12.6C9.45,13.5 10.69,14 12,14C13.31,14 14.55,13.5 15.6,12.6C16.5,11.55 17,10.31 17,9C17,7.69 16.5,6.45 15.6,5.4C14.55,4.5 13.31,4 12,4M12,6C12.83,6 13.5,6.67 13.5,7.5C13.5,8.33 12.83,9 12,9C11.17,9 10.5,8.33 10.5,7.5C10.5,6.67 11.17,6 12,6M7.5,10.5C8.33,10.5 9,11.17 9,12C9,12.83 8.33,13.5 7.5,13.5C6.67,13.5 6,12.83 6,12C6,11.17 6.67,10.5 7.5,10.5M16.5,10.5C17.33,10.5 18,11.17 18,12C18,12.83 17.33,13.5 16.5,13.5C15.67,13.5 15,12.83 15,12C15,11.17 15.67,10.5 16.5,10.5M12,12C12.83,12 13.5,12.67 13.5,13.5C13.5,14.33 12.83,15 12,15C11.17,15 10.5,14.33 10.5,13.5C10.5,12.67 11.17,12 12,12Z"/>
+                    <svg class="floating-element flower-2" viewbox="0 0 24 24" fill="white"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12,2C13.85,2 15.55,2.78 16.9,4.1C18.22,5.42 19,7.15 19,9C19,10.85 18.22,12.58 16.9,13.9C15.58,15.22 13.85,16 12,16C10.15,16 8.42,15.22 7.1,13.9C5.78,12.58 5,10.85 5,9C5,7.15 5.78,5.42 7.1,4.1C8.45,2.78 10.15,2 12,2M12,4C10.69,4 9.45,4.5 8.4,5.4C7.5,6.45 7,7.69 7,9C7,10.31 7.5,11.55 8.4,12.6C9.45,13.5 10.69,14 12,14C13.31,14 14.55,13.5 15.6,12.6C16.5,11.55 17,10.31 17,9C17,7.69 16.5,6.45 15.6,5.4C14.55,4.5 13.31,4 12,4M12,6C12.83,6 13.5,6.67 13.5,7.5C13.5,8.33 12.83,9 12,9C11.17,9 10.5,8.33 10.5,7.5C10.5,6.67 11.17,6 12,6M7.5,10.5C8.33,10.5 9,11.17 9,12C9,12.83 8.33,13.5 7.5,13.5C6.67,13.5 6,12.83 6,12C6,11.17 6.67,10.5 7.5,10.5M16.5,10.5C17.33,10.5 18,11.17 18,12C18,12.83 17.33,13.5 16.5,13.5C15.67,13.5 15,12.83 15,12C15,11.17 15.67,10.5 16.5,10.5M12,12C12.83,12 13.5,12.67 13.5,13.5C13.5,14.33 12.83,15 12,15C11.17,15 10.5,14.33 10.5,13.5C10.5,12.67 11.17,12 12,12Z" />
                     </svg>
 
                     <!-- Heart 1 -->
-                    <svg class="floating-element heart-1" viewbox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/>
+                    <svg class="floating-element heart-1" viewbox="0 0 24 24" fill="white"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" />
                     </svg>
                 </div>
 
                 <div class="front-content">
                     <div class="photo-frame">
-                        <img src="/Images/Mother/IMG-20250324-WA0003.jpg" alt="Mom and Me" class="mom-photo">
+                        <img src="/images/mother/IMG-20250324-WA0003.jpg" alt="Mom and Me" class="mom-photo">
                     </div>
 
                     <h1>Happy Mother's Day</h1>
@@ -725,32 +738,36 @@
                 <div class="card-content">
                     <div class="header">
                         <h2>Dearest Mom,</h2>
-                        <p>On this special day, I wanted to take a moment to tell you how much you mean to me. Your love, strength, and wisdom have shaped me into the person I am today. Thank you for always being there, through thick and thin.</p>
+                        <p>On this special day, I wanted to take a moment to tell you how much you mean to me. Your
+                            love, strength, and wisdom have shaped me into the person I am today. Thank you for always
+                            being there, through thick and thin.</p>
                     </div>
 
                     <!-- Images Section -->
                     <h3 class="section-title">Our Special Moments</h3>
                     <div class="images-grid">
                         <div class="memory-image-container">
-                            <img src="/Images/Mother/IMG-20250324-WA0002.jpg" alt="Memory 1" class="memory-image">
+                            <img src="/images/mother/IMG-20250324-WA0002.jpg" alt="Memory 1" class="memory-image">
                             <div class="image-caption">Me And Grandma</div>
                         </div>
                         <div class="memory-image-container">
-                            <img src="/Images/Mother/IMG-20250324-WA0004.jpg" alt="Memory 2" class="memory-image">
+                            <img src="/images/mother/IMG-20250324-WA0004.jpg" alt="Memory 2" class="memory-image">
                             <div class="image-caption">You And The Girls</div>
                         </div>
                         <div class="memory-image-container">
-                            <img src="/Images/Mother/IMG-20250324-WA0005.jpg" alt="Memory 3" class="memory-image">
+                            <img src="/images/mother/IMG-20250324-WA0005.jpg" alt="Memory 3" class="memory-image">
                             <div class="image-caption">Father Christmas</div>
                         </div>
                         <div class="memory-image-container">
-                            <img src="/Images/Mother/IMG-20250324-WA0007.jpg" alt="Memory 4" class="memory-image">
+                            <img src="/images/mother/IMG-20250324-WA0007.jpg" alt="Memory 4" class="memory-image">
                             <div class="image-caption">London Eye</div>
                         </div>
                     </div>
 
                     <div class="quote-box">
-                        <p>Mom, you've taught me that love is patient and kind, that strength comes from gentleness, and that the most beautiful things in life are the moments we share together. I'm forever grateful for everything you are.</p>
+                        <p>Mom, you've taught me that love is patient and kind, that strength comes from gentleness, and
+                            that the most beautiful things in life are the moments we share together. I'm forever
+                            grateful for everything you are.</p>
                     </div>
 
                     <!-- Reasons Section -->
@@ -758,19 +775,27 @@
                     <div class="memory-boxes">
                         <div class="memory-box">
                             <h3>Your Endless Love</h3>
-                            <p>Your love has no conditions, no limits, and no end. You've shown me what it means to love unconditionally, and it's shaped how I see the world and treat others. Even on my worst days, your love has never wavered.</p>
+                            <p>Your love has no conditions, no limits, and no end. You've shown me what it means to love
+                                unconditionally, and it's shaped how I see the world and treat others. Even on my worst
+                                days, your love has never wavered.</p>
                         </div>
                         <div class="memory-box">
                             <h3>Your Incredible Strength</h3>
-                            <p>Through every challenge, you've stood tall with grace and resilience. You've shown me that true strength isn't about never falling, but about rising every time we fall. Your courage inspires me daily.</p>
+                            <p>Through every challenge, you've stood tall with grace and resilience. You've shown me
+                                that true strength isn't about never falling, but about rising every time we fall. Your
+                                courage inspires me daily.</p>
                         </div>
                         <div class="memory-box">
                             <h3>Your Timeless Wisdom</h3>
-                            <p>Your advice and guidance have been my compass in life. Even when I didn't want to hear it, your wisdom has steered me in the right direction countless times. You always seem to know exactly what to say.</p>
+                            <p>Your advice and guidance have been my compass in life. Even when I didn't want to hear
+                                it, your wisdom has steered me in the right direction countless times. You always seem
+                                to know exactly what to say.</p>
                         </div>
                     </div>
 
-                    <p>Thank you for everything you do, for the sacrifices you've made, and for the unconditional love you give so freely. I'm beyond blessed to have you as my mom, and I hope this day brings you even a fraction of the joy you've brought to my life.</p>
+                    <p>Thank you for everything you do, for the sacrifices you've made, and for the unconditional love
+                        you give so freely. I'm beyond blessed to have you as my mom, and I hope this day brings you
+                        even a fraction of the joy you've brought to my life.</p>
 
                     <p class="signature">With all my love,<br>Ozzie</p>
                 </div>
@@ -778,7 +803,7 @@
         </div>
     </div>
 
-<!-- 
+    <!-- 
     <div class="dev-mode">
         <label for="dev-checkbox">Dev Mode:</label>
         <input type="checkbox" id="dev-checkbox">
@@ -841,7 +866,7 @@
 
             // Open card
             openButton.addEventListener('click', function () {
-                if (! openButton.disabled) {
+                if (!openButton.disabled) {
                     card.classList.add('flipped');
                     createConfetti();
 
@@ -915,7 +940,7 @@
             imageContainers.forEach(container => {
                 container.addEventListener('touchstart', function () {
                     this.style.transform = 'scale(1.03)';
-                }, {passive: true});
+                }, { passive: true });
 
                 container.addEventListener('touchend', function () {
                     setTimeout(() => {
@@ -927,7 +952,7 @@
                             }
                         }
                     }, 300);
-                }, {passive: true});
+                }, { passive: true });
             });
 
             // Prevent drag on images
@@ -951,4 +976,8 @@
             });
         });
     </script>
-</body></html></svg><!-- Heart 2 --><svg class="floating-element heart-2" viewbox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path
+</body>
+
+</html></svg><!-- Heart 2 --><svg class="floating-element heart-2" viewbox="0 0 24 24" fill="white"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
