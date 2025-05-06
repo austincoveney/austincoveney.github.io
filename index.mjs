@@ -404,22 +404,6 @@ $(document).ready(function() {
     
     // Project details data
     const projectData = {
-        basecamp: {
-            title: 'Basecamp Airsoft Ltd',
-            content: `
-                <h4 class="text-xl text-primary mb-4">About This Project</h4>
-                <p class="text-gray mb-6">Basecamp Airsoft Ltd is a ticket sales startup for the airsoft industry that I founded and currently lead as Company Director. This business provides a unified booking platform for airsoft events across the UK.</p>
-                <h4 class="text-xl text-primary mb-4">Key Responsibilities</h4>
-                <ul class="mb-8 space-y-4">
-                    <li class="relative pl-8 text-gray before:content-[''] before:absolute before:top-2 before:left-0 before:w-2 before:h-2 before:bg-primary before:rounded-full">Developed and implemented the business strategy and revenue model</li>
-                    <li class="relative pl-8 text-gray before:content-[''] before:absolute before:top-2 before:left-0 before:w-2 before:h-2 before:bg-primary before:rounded-full">Built relationships with airsoft sites across the UK to create a unified booking platform</li>
-                    <li class="relative pl-8 text-gray before:content-[''] before:absolute before:top-2 before:left-0 before:w-2 before:h-2 before:bg-primary before:rounded-full">Managed resource allocation for optimal business growth</li>
-                    <li class="relative pl-8 text-gray before:content-[''] before:absolute before:top-2 before:left-0 before:w-2 before:h-2 before:bg-primary before:rounded-full">Implemented sales strategies to increase client acquisition</li>
-                </ul>
-                <h4 class="text-xl text-primary mb-4">Results & Achievements</h4>
-                <p class="text-gray">Successfully launched the platform with multiple airsoft sites onboarded, creating a streamlined booking experience for enthusiasts while providing valuable business analytics for site owners.</p>
-            `
-        },
         digigrow: {
             title: 'DigiGrow LTD',
             content: `
