@@ -173,6 +173,9 @@
 </head>
 
 <body class="font-sans text-dark dark:text-light bg-light dark:bg-dark-light antialiased transition-colors duration-300 overflow-x-hidden">
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link sr-only focus:not-sr-only fixed top-2 left-2 bg-primary text-white py-2 px-4 z-50 focus:outline-none rounded-md">Skip to main content</a>
+    
     <!-- Progress Bar -->
     <div class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent w-0 z-50" id="progress-bar"></div>
     
@@ -243,7 +246,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section id="home" class="relative min-h-screen flex items-center pt-28 pb-16 bg-gradient-to-br from-light/90 to-blue-100/90 dark:from-dark/95 dark:to-dark-light/95">
             <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none bg-pattern"></div>
@@ -279,7 +282,7 @@
                             <div class="absolute top-[-10px] left-[-10px] w-[calc(100%+20px)] h-[calc(100%+20px)] border-2 border-dashed border-primary dark:border-primary-light rounded-full animate-rotate"></div>
                             <div class="w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-dark shadow-lg animate-float">
                                 <!-- Replace with your actual image -->
-                                <div class="w-full h-full placeholder-img" aria-label="Austin Coveney professional headshot"></div>
+                                <div class="w-full h-full /static/images/austin_sitting_by_river.jpg" aria-label="Austin Coveney professional headshot"></div>
                             </div>
                         </div>
                     </div>
@@ -614,17 +617,17 @@
                     </div>
                 </div>
                 
-                <!-- Project 6: Code Snippet Repository -->
-                <div class="portfolio-item" data-category="web security" data-aos="fade-up" data-aos-delay="600">
+                <!-- Project 6: Section Leader at The Thatched Tavern -->
+                <div class="portfolio-item" data-category="business" data-aos="fade-up" data-aos-delay="600">
                     <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                        <div class="w-full h-64 placeholder-img bg-gradient-to-r from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 flex items-center justify-center" aria-label="Code Snippet Repository">
-                            <i class="fas fa-code-branch text-gray-400 dark:text-gray-600 text-6xl"></i>
+                        <div class="w-full h-64 placeholder-img bg-gradient-to-r from-amber-100 to-amber-200 dark:from-amber-900/30 dark:to-amber-800/30 flex items-center justify-center" aria-label="Section Leader at The Thatched Tavern">
+                            <i class="fas fa-user-tie text-gray-400 dark:text-gray-600 text-6xl"></i>
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <div class="p-6 w-full">
-                                <h3 class="text-xl font-bold text-white mb-2">Code Snippet Repository</h3>
-                                <p class="text-gray-300 mb-4">Collection of Security & Web Tools</p>
-                                <button class="inline-block px-4 py-2 bg-primary text-white rounded-full text-sm hover:bg-primary-dark transition-colors project-details focus:outline-none focus:ring-2 focus:ring-white" data-project="snippets">View Details</button>
+                                <h3 class="text-xl font-bold text-white mb-2">Section Leader Experience</h3>
+                                <p class="text-gray-300 mb-4">The Thatched Tavern Leadership Role</p>
+                                <button class="inline-block px-4 py-2 bg-primary text-white rounded-full text-sm hover:bg-primary-dark transition-colors project-details focus:outline-none focus:ring-2 focus:ring-white" data-project="section-leader">View Details</button>
                             </div>
                         </div>
                     </div>
@@ -857,9 +860,9 @@
                         </div>
                     </div>
                     
-                        <div data-aos="fade-left">
+                    <div data-aos="fade-left">
                         <div class="bg-gray-50 dark:bg-dark-light rounded-lg p-8 shadow-lg">
-                            <form id="contact-form" class="space-y-6" action="https://formspree.io/f/xzzedvol" method="POST" novalidate>
+                            <form id="contact-form" class="space-y-6" action="https://formspree.io/f/xzzedvol" method="POST">
                                 <div>
                                     <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
                                     <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg bg-white dark:bg-dark border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-light">
@@ -1029,11 +1032,15 @@
                 mobileMenuToggle.addEventListener('click', () => {
                     mobileMenu.classList.remove('translate-x-full');
                     document.body.classList.add('overflow-hidden');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'true');
+                    mobileMenu.setAttribute('aria-hidden', 'false');
                 });
                 
                 mobileMenuClose.addEventListener('click', () => {
                     mobileMenu.classList.add('translate-x-full');
                     document.body.classList.remove('overflow-hidden');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
                 });
                 
                 // Close mobile menu when clicking a link
@@ -1041,6 +1048,8 @@
                     link.addEventListener('click', () => {
                         mobileMenu.classList.add('translate-x-full');
                         document.body.classList.remove('overflow-hidden');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                        mobileMenu.setAttribute('aria-hidden', 'true');
                     });
                 });
             }
@@ -1169,6 +1178,36 @@
             
             if (projectLinks.length > 0 && projectModal && modalClose && modalTitle && modalContent) {
                 const projectData = {
+                    encryption: {
+                        title: 'Python Encryption Tool',
+                        content: `
+                            <div class="mb-6">
+                                <div class="w-full h-64 rounded-lg mb-4 placeholder-img" aria-label="Python Encryption Tool project image"></div>
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">About This Project</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">I developed a customizable encryption tool using Python that allows users to securely encrypt files and text data. This tool uses strong cryptographic algorithms to ensure data remains secure and private.</p>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Technical Details</h4>
+                                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
+                                    <li>Implemented AES-256 encryption for secure data protection</li>
+                                    <li>Created a user-friendly command-line interface for easy operation</li>
+                                    <li>Designed a password-based key derivation function for enhanced security</li>
+                                    <li>Built file integrity verification to ensure successful encryption/decryption</li>
+                                    <li>Added options for both symmetric and asymmetric encryption methods</li>
+                                </ul>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Technologies Used</h4>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Python</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Cryptography</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">CLI Design</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Binary File Handling</span>
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Results & Impact</h4>
+                                <p class="text-gray-700 dark:text-gray-300">This tool has been valuable for securing sensitive data for both personal use and business applications. It demonstrates my understanding of cybersecurity principles and practical implementation of encryption techniques.</p>
+                            </div>
+                        `
+                    },
                     digigrow: {
                         title: 'DigiGrow LTD',
                         content: `
@@ -1231,6 +1270,37 @@
                             </div>
                         `
                     },
+                    linux: {
+                        title: 'Linux Security Research',
+                        content: `
+                            <div class="mb-6">
+                                <div class="w-full h-64 rounded-lg mb-4 placeholder-img" aria-label="Linux Security Research project image"></div>
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">About This Project</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">As part of my ongoing interest in cybersecurity, I conducted research into Linux system hardening and penetration testing techniques. This project involved identifying vulnerabilities and implementing security measures to protect systems.</p>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Key Activities</h4>
+                                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
+                                    <li>Conducted vulnerability assessments on various Linux distributions</li>
+                                    <li>Implemented system hardening techniques to improve security</li>
+                                    <li>Tested security measures with simulated penetration testing</li>
+                                    <li>Documented best practices for secure Linux server configuration</li>
+                                    <li>Created automated security scripts for system monitoring</li>
+                                </ul>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Technologies Used</h4>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Linux</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Bash Scripting</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Security Tools</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Penetration Testing</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Firewall Configuration</span>
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Results & Impact</h4>
+                                <p class="text-gray-700 dark:text-gray-300">This research has been valuable for securing both my own systems and providing security guidance to clients. It demonstrates my commitment to cybersecurity principles and practical implementation of security measures.</p>
+                            </div>
+                        `
+                    },
                     yip: {
                         title: 'Young Innovators Project',
                         content: `
@@ -1261,6 +1331,77 @@
                                 <p class="text-gray-700 dark:text-gray-300">Successfully launched multiple workshops with strong attendance, creating valuable networking opportunities for young entrepreneurs and providing them with practical business skills and knowledge.</p>
                             </div>
                         `
+                    },
+                    'section-leader': {
+                        title: 'Section Leader at The Thatched Tavern',
+                        content: `
+                            <div class="mb-6">
+                                <div class="w-full h-64 rounded-lg mb-4 placeholder-img" aria-label="Section Leader at The Thatched Tavern"></div>
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">About This Role</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">As a Section Leader at The Thatched Tavern, I manage a dedicated area of the restaurant, oversee staff operations, and ensure exceptional customer service. This leadership role has been instrumental in developing my management and interpersonal skills in a fast-paced environment.</p>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Key Responsibilities</h4>
+                                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
+                                    <li>Supervising a team of 4-6 staff members during busy service periods</li>
+                                    <li>Training new employees on restaurant procedures and customer service standards</li>
+                                    <li>Managing complex POS systems and resolving technical issues</li>
+                                    <li>Handling customer requests and ensuring satisfaction</li>
+                                    <li>Coordinating with kitchen staff to ensure smooth service flow</li>
+                                    <li>Maintaining high standards of cleanliness and presentation</li>
+                                </ul>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Skills Developed</h4>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Team Leadership</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Time Management</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Problem Solving</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Customer Service</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Communication</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">POS System Management</span>
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Achievements & Impact</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-3">During my time as Section Leader, I have:</p>
+                                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                                    <li>Reduced customer wait times by 20% through improved service coordination</li>
+                                    <li>Successfully trained 8+ new staff members who became valuable team contributors</li>
+                                    <li>Received multiple commendations from management for exceptional service</li>
+                                    <li>Implemented process improvements that increased table turnover during peak hours</li>
+                                    <li>Maintained high customer satisfaction ratings through attentive service</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    'tavern-server': {
+                        title: 'Python Server Experience at The Thatched Tavern',
+                        content: `
+                            <div class="mb-6">
+                                <div class="w-full h-64 rounded-lg mb-4 placeholder-img" aria-label="Python Server Experience at The Thatched Tavern"></div>
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">About This Project</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">At The Thatched Tavern, I developed and implemented a custom Python-based server solution to enhance the restaurant's point-of-sale (POS) system, improving operational efficiency and data management.</p>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Key Achievements</h4>
+                                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
+                                    <li>Designed a Python backend server to integrate with the existing POS system</li>
+                                    <li>Created a middleware solution for seamless communication between systems</li>
+                                    <li>Implemented data synchronization for real-time order management</li>
+                                    <li>Built reporting tools to analyze sales data and customer trends</li>
+                                    <li>Improved system stability and reduced order processing errors</li>
+                                </ul>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Technologies Used</h4>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Python</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Flask</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">SQL Database</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">API Integration</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Network Security</span>
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Results & Impact</h4>
+                                <p class="text-gray-700 dark:text-gray-300">The implementation of this system reduced order processing time by 30% and significantly decreased errors in order management. It also provided valuable insights for menu optimization and staff scheduling through improved data analytics capabilities.</p>
+                            </div>
+                        `
                     }
                 };
                 
@@ -1273,6 +1414,7 @@
                         if (project) {
                             modalTitle.textContent = project.title;
                             modalContent.innerHTML = project.content;
+                            modalTitle.setAttribute('data-current-project', projectId);
                             
                             // Show modal with animation
                             projectModal.classList.remove('opacity-0', 'pointer-events-none');
@@ -1347,72 +1489,68 @@
             const contactForm = document.getElementById('contact-form');
             
             if (contactForm) {
-                contactForm.addEventListener('submit', e => {
-                    e.preventDefault();
+                contactForm.addEventListener('submit', function(e) {
+                    let isValid = true;
                     
                     // Get form data
                     const name = document.getElementById('name').value.trim();
                     const email = document.getElementById('email').value.trim();
                     const subject = document.getElementById('subject').value.trim();
                     const message = document.getElementById('message').value.trim();
+                    const feedbackElement = document.getElementById('form-feedback');
+                    
+                    // Reset feedback element
+                    if (feedbackElement) {
+                        feedbackElement.textContent = '';
+                        feedbackElement.className = 'hidden';
+                    }
                     
                     // Simple validation
                     if (!name || !email || !subject || !message) {
-                        // Show error message
-                        const feedbackElement = document.getElementById('form-feedback');
+                        isValid = false;
                         if (feedbackElement) {
                             feedbackElement.textContent = 'Please fill in all fields';
                             feedbackElement.className = 'mt-4 text-red-500 font-medium text-sm';
                             feedbackElement.classList.remove('hidden');
-                            
-                            // Hide message after 3 seconds
-                            setTimeout(() => {
-                                feedbackElement.classList.add('hidden');
-                            }, 3000);
-                        } else {
-                            alert('Please fill in all fields');
                         }
-                        return;
                     }
                     
                     // Email validation
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(email)) {
-                        // Show error message
-                        const feedbackElement = document.getElementById('form-feedback');
+                    if (email && !emailRegex.test(email)) {
+                        isValid = false;
                         if (feedbackElement) {
                             feedbackElement.textContent = 'Please enter a valid email address';
                             feedbackElement.className = 'mt-4 text-red-500 font-medium text-sm';
                             feedbackElement.classList.remove('hidden');
-                            
-                            // Hide message after 3 seconds
-                            setTimeout(() => {
-                                feedbackElement.classList.add('hidden');
-                            }, 3000);
-                        } else {
-                            alert('Please enter a valid email address');
                         }
-                        return;
                     }
                     
-                    // In a real implementation, you would send this data to a server
-                    // For now, show a success message
-                    const feedbackElement = document.getElementById('form-feedback');
-                    if (feedbackElement) {
+                    // If validation fails, prevent form submission
+                    if (!isValid) {
+                        e.preventDefault();
+                        return false;
+                    }
+                    
+                    // Form submission is handled by Formspree
+                    // The form will automatically redirect to Formspree's success page
+                    // Optional: Add custom success handling if needed
+                    
+                    // For demonstration purposes, show a success message
+                    // In production, this would be handled by Formspree's redirect
+                    /* 
+                    // This code is just for demonstration
+                    if (isValid && feedbackElement) {
+                        e.preventDefault(); // Remove this line for actual Formspree submission
                         feedbackElement.textContent = 'Thank you for your message! I\'ll get back to you soon.';
                         feedbackElement.className = 'mt-4 text-green-500 font-medium text-sm';
                         feedbackElement.classList.remove('hidden');
                         
-                        // Hide message after 5 seconds
                         setTimeout(() => {
-                            feedbackElement.classList.add('hidden');
-                        }, 5000);
-                    } else {
-                        alert('Thank you for your message! I\'ll get back to you soon.');
+                            contactForm.reset();
+                        }, 2000);
                     }
-                    
-                    // Reset form
-                    contactForm.reset();
+                    */
                 });
             }
             
@@ -1440,12 +1578,32 @@
                 });
             }
             
-            // Add skip to content link for accessibility
-            const skipLink = document.createElement('a');
-            skipLink.href = '#main-content';
-            skipLink.className = 'skip-link sr-only focus:not-sr-only fixed top-2 left-2 bg-primary text-white py-2 px-4 z-50 focus:outline-none rounded-md';
-            skipLink.textContent = 'Skip to main content';
-            document.body.insertBefore(skipLink, document.body.firstChild);
+            // Highlight active navigation item based on scroll position
+            function highlightNavOnScroll() {
+                const sections = document.querySelectorAll('section[id]');
+                const navItems = document.querySelectorAll('nav a[href^="#"]');
+                
+                window.addEventListener('scroll', () => {
+                    let scrollY = window.pageYOffset;
+                    
+                    sections.forEach(section => {
+                        const sectionHeight = section.offsetHeight;
+                        const sectionTop = section.offsetTop - 100;
+                        const sectionId = section.getAttribute('id');
+                        
+                        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                            navItems.forEach(item => {
+                                item.classList.remove('text-primary', 'dark:text-primary-light');
+                                if (item.getAttribute('href') === '#' + sectionId) {
+                                    item.classList.add('text-primary', 'dark:text-primary-light');
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+            
+            highlightNavOnScroll();
         });
     </script>
 </body>
