@@ -1,31 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Austin Coveney - Entrepreneur & Sales Professional</title>
-    <meta name="description"
-        content="Professional portfolio of Austin Coveney, entrepreneur specializing in sales, marketing, and business development">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="static/libs/font-awesome/6.4.0/all.min.css">
-
-    <!-- Google Fonts -->
+    <title>Austin Coveney - Entrepreneur & Web Developer</title>
+    <meta name="description" content="Professional portfolio of Austin Coveney, entrepreneur and developer specializing in web development, sales, and digital marketing">
+    <meta name="author" content="Austin Coveney">
+    <meta name="keywords" content="web developer, entrepreneur, digital marketing, python developer, Farnborough">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap"
-        rel="stylesheet">
-
-    <!-- jQuery -->
-    <script src="static/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Austin Coveney - Entrepreneur & Web Developer">
+    <meta property="og:description" content="Professional portfolio of Austin Coveney, entrepreneur and developer specializing in web development, sales, and digital marketing">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://austincoveney.uk">
+    
+    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -54,8 +63,8 @@
                         'blink': 'blink 1s infinite',
                         'float': 'float 6s ease-in-out infinite',
                         'rotate': 'rotate 30s linear infinite',
-                        'bounce': 'bounce 2s infinite',
-                        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                        'bounce-slow': 'bounce 2s infinite',
+                        'gradient': 'gradient 15s ease infinite',
                     },
                     keyframes: {
                         blink: {
@@ -70,313 +79,298 @@
                             '0%': { transform: 'rotate(0deg)' },
                             '100%': { transform: 'rotate(360deg)' }
                         },
-                        bounce: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        },
-                        pulse: {
-                            '0%, 100%': { opacity: '1' },
-                            '50%': { opacity: '0.5' }
+                        gradient: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                            '100%': { backgroundPosition: '0% 50%' }
                         }
                     }
                 }
             }
         }
     </script>
-
+    
+    <!-- Custom Styles -->
     <style>
-        /* Base styles to ensure elements are visible before JavaScript loads */
-        .skill-progress {
-            width: 0;
-            transition: width 1.5s ease-in-out;
-            position: relative;
-        }
-
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background-color: #4a63e7;
-        }
-
-        @media (max-width: 767px) {
-            .timeline-line::before {
-                left: 1rem;
-            }
-        }
-
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background-color: #4a63e7;
-            z-index: 2000;
-            width: 0;
-            transition: width 0.1s;
-        }
-
-        /* Animation classes */
-        .fade-in {
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Input animations */
-        input:focus+label,
-        textarea:focus+label,
-        input:not(:placeholder-shown)+label,
-        textarea:not(:placeholder-shown)+label {
-            transform: translateY(-100%) scale(0.8);
+        /* Fallback styles for browsers without proper Tailwind support */
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #0f172a;
             background-color: #f8fafc;
-            padding: 0 0.5rem;
-            color: #4a63e7;
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
         }
-
-        /* Timeline content styles */
-        .timeline-content-odd::before {
-            content: '';
-            position: absolute;
-            top: 1.5rem;
-            left: -1rem;
-            width: 2rem;
-            height: 2rem;
-            background-color: white;
-            transform: rotate(45deg);
-            box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.03);
+        
+        .dark body {
+            color: #f8fafc;
+            background-color: #1e293b;
         }
-
-        .timeline-content-even::before {
-            content: '';
-            position: absolute;
-            top: 1.5rem;
-            right: -1rem;
-            width: 2rem;
-            height: 2rem;
-            background-color: white;
-            transform: rotate(45deg);
-            box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.03);
+        
+        /* Improve focus styles for accessibility */
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+            outline: 2px solid #4a63e7;
+            outline-offset: 2px;
         }
-
-        @media (max-width: 767px) {
-
-            .timeline-content-odd::before,
-            .timeline-content-even::before {
-                left: -1rem;
-                right: auto;
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            
+            .animate-float, .animate-rotate, .animate-bounce-slow, .animate-blink {
+                animation: none !important;
             }
         }
-
-        /* Portfolio item overlay animations */
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
+        
+        /* Pattern background */
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%234a63e7' stroke-width='1' stroke-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
-
-        .portfolio-item:hover .portfolio-info {
-            transform: translateY(0);
+        
+        /* Placeholder images (can be replaced with real images later) */
+        .placeholder-img {
+            background-color: #e2e8f0;
+            background-image: linear-gradient(45deg, #f1f5f9 25%, transparent 25%, transparent 75%, #f1f5f9 75%, #f1f5f9), 
+                              linear-gradient(45deg, #f1f5f9 25%, transparent 25%, transparent 75%, #f1f5f9 75%, #f1f5f9);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
         }
-
-        .portfolio-item:hover .portfolio-img img {
-            transform: scale(1.1);
+        
+        .dark .placeholder-img {
+            background-color: #1e293b;
+            background-image: linear-gradient(45deg, #0f172a 25%, transparent 25%, transparent 75%, #0f172a 75%, #0f172a), 
+                              linear-gradient(45deg, #0f172a 25%, transparent 25%, transparent 75%, #0f172a 75%, #0f172a);
+        }
+        
+        /* Custom scrollbar for modern browsers */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        .dark ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #4a63e7;
+            border-radius: 9999px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3d52c9;
         }
     </style>
 </head>
 
-<body
-    class="font-sans text-base text-dark bg-light antialiased overflow-x-hidden relative opacity-0 transition-opacity duration-500"
-    id="body">
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress"></div>
-
+<body class="font-sans text-dark dark:text-light bg-light dark:bg-dark-light antialiased transition-colors duration-300 overflow-x-hidden">
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent w-0 z-50" id="progress-bar"></div>
+    
     <!-- Header -->
-    <header class="fixed top-0 left-0 w-full z-50 py-8 transition-all duration-300" id="header">
-        <div class="container mx-auto px-4 md:px-8">
-            <nav id="navbar" class="flex justify-between items-center">
-                <div class="logo">
-                    <a href="#hero"
-                        class="text-2xl font-bold text-primary font-serif relative inline-block hover:after:w-full after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-primary after:transition-all after:duration-300">AC</a>
+    <header class="fixed top-0 left-0 w-full z-40 transition-all duration-300" id="header">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-6" aria-label="Main navigation">
+                <a href="#home" class="text-2xl font-bold text-primary dark:text-primary-light font-serif relative focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:rounded-md">AC</a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <ul class="flex space-x-6" role="menubar">
+                        <li role="none"><a href="#home" class="text-dark dark:text-light hover:text-primary dark:hover:text-primary-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded-md" role="menuitem">Home</a></li>
+                        <li role="none"><a href="#about" class="text-dark dark:text-light hover:text-primary dark:hover:text-primary-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded-md" role="menuitem">About</a></li>
+                        <li role="none"><a href="#skills" class="text-dark dark:text-light hover:text-primary dark:hover:text-primary-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded-md" role="menuitem">Skills</a></li>
+                        <li role="none"><a href="#portfolio" class="text-dark dark:text-light hover:text-primary dark:hover:text-primary-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded-md" role="menuitem">Portfolio</a></li>
+                        <li role="none"><a href="#experience" class="text-dark dark:text-light hover:text-primary dark:hover:text-primary-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded-md" role="menuitem">Experience</a></li>
+                        <li role="none"><a href="#contact" class="text-dark dark:text-light hover:text-primary dark:hover:text-primary-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded-md" role="menuitem">Contact</a></li>
+                    </ul>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-full bg-gray-light dark:bg-dark text-dark dark:text-light hover:bg-gray transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:hidden" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                        </svg>
+                    </button>
                 </div>
-                <ul class="nav-links hidden md:flex items-center gap-6">
-                    <li><a href="#about"
-                            class="text-base font-medium text-dark hover:text-primary transition-colors duration-300 relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all hover:before:w-full">About</a>
-                    </li>
-                    <li><a href="#skills"
-                            class="text-base font-medium text-dark hover:text-primary transition-colors duration-300 relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all hover:before:w-full">Skills</a>
-                    </li>
-                    <li><a href="#portfolio"
-                            class="text-base font-medium text-dark hover:text-primary transition-colors duration-300 relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all hover:before:w-full">Portfolio</a>
-                    </li>
-                    <li><a href="#experience"
-                            class="text-base font-medium text-dark hover:text-primary transition-colors duration-300 relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-primary before:transition-all hover:before:w-full">Experience</a>
-                    </li>
-                    <li><a href="#contact"
-                            class="bg-secondary text-white px-4 py-2 rounded-full font-medium shadow-md hover:bg-red-600 transition-all duration-300 transform hover:-translate-y-0.5">Contact</a>
-                    </li>
-                </ul>
-                <div class="hamburger md:hidden flex flex-col justify-between w-8 h-5 cursor-pointer z-50"
-                    aria-label="Menu toggle">
-                    <span class="w-full h-0.5 bg-dark transition-all duration-300"></span>
-                    <span class="w-full h-0.5 bg-dark transition-all duration-300"></span>
-                    <span class="w-full h-0.5 bg-dark transition-all duration-300"></span>
+                
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden space-x-4">
+                    <!-- Dark Mode Toggle (Mobile) -->
+                    <button id="theme-toggle-mobile" aria-label="Toggle dark mode" class="p-2 rounded-full bg-gray-light dark:bg-dark text-dark dark:text-light focus:outline-none focus:ring-2 focus:ring-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:hidden" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                        </svg>
+                    </button>
+                    
+                    <button id="mobile-menu-toggle" class="text-dark dark:text-light focus:outline-none focus:ring-2 focus:ring-primary focus:rounded-md" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                 </div>
             </nav>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-dark-light z-50 flex flex-col justify-center items-center transform translate-x-full transition-transform duration-300" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile menu">
+            <button id="mobile-menu-close" class="absolute top-6 right-6 text-dark dark:text-light focus:outline-none focus:ring-2 focus:ring-primary focus:rounded-md" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            
+            <ul class="flex flex-col space-y-6 text-center" role="menu">
+                <li role="none"><a href="#home" class="text-xl text-dark dark:text-light hover:text-primary dark:hover:text-primary-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary" role="menuitem">Home</a></li>
+                <li role="none"><a href="#about" class="text-xl text-dark dark:text-light hover:text-primary dark:hover:text-primary-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary" role="menuitem">About</a></li>
+                <li role="none"><a href="#skills" class="text-xl text-dark dark:text-light hover:text-primary dark:hover:text-primary-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#portfolio" class="text-xl text-dark dark:text-light hover:text-primary dark:hover:text-primary-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary" role="menuitem">Portfolio</a></li>
+                <li role="none"><a href="#experience" class="text-xl text-dark dark:text-light hover:text-primary dark:hover:text-primary-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary" role="menuitem">Experience</a></li>
+                <li role="none"><a href="#contact" class="text-xl text-dark dark:text-light hover:text-primary dark:hover:text-primary-light transition-colors focus:outline-none focus:ring-2 focus:ring-primary" role="menuitem">Contact</a></li>
+            </ul>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="hero"
-            class="flex items-center relative pt-24 pb-16 min-h-screen bg-gradient-to-br from-light/90 to-blue-100/90 overflow-hidden">
-            <div class="container mx-auto px-4 md:px-8">
-                <div class="grid md:grid-cols-2 gap-10 items-center">
-                    <div class="hero-content opacity-0 transform translate-y-8 transition-all duration-700 max-w-2xl">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">Hi, I'm <span
-                                class="text-primary">Austin Coveney</span></h1>
-                        <div class="typewriter flex text-xl md:text-2xl font-semibold mb-8 text-primary h-10">
-                            <span id="typewriter-text"></span><span
-                                class="cursor inline-block w-0.5 h-9 ml-1 bg-primary animate-blink">|</span>
+        <section id="home" class="relative min-h-screen flex items-center pt-28 pb-16 bg-gradient-to-br from-light/90 to-blue-100/90 dark:from-dark/95 dark:to-dark-light/95">
+            <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none bg-pattern"></div>
+            
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="hero-content" data-aos="fade-up">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                            Hi, I'm <span class="text-primary dark:text-primary-light">Austin Coveney</span>
+                        </h1>
+                        
+                        <div class="flex text-xl md:text-2xl font-semibold mb-6 text-primary dark:text-primary-light h-10">
+                            <span id="typewriter"></span>
+                            <span class="ml-1 w-0.5 h-8 bg-primary dark:bg-primary-light animate-blink"></span>
                         </div>
-                        <p class="text-base md:text-lg mb-10 text-gray">Transforming business opportunities
-                            into
-                            successful ventures</p>
+                        
+                        <p class="text-gray-600 dark:text-gray-300 text-lg mb-8 max-w-lg">
+                            Web developer and entrepreneur specializing in creating modern digital experiences, optimizing workflows, and implementing innovative solutions.
+                        </p>
+                        
                         <div class="flex flex-wrap gap-4">
-                            <a href="#portfolio"
-                                class="px-6 py-3 bg-primary text-white rounded-full font-medium shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:bg-primary-dark">View
-                                My Work</a>
-                            <a href="#contact"
-                                class="px-6 py-3 bg-transparent text-primary border-2 border-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Let's
-                                Connect</a>
+                            <a href="#portfolio" class="px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-full shadow-lg transform hover:-translate-y-1 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                View My Work
+                            </a>
+                            <a href="#contact" class="px-6 py-3 border-2 border-primary text-primary dark:text-primary-light hover:bg-primary hover:text-white dark:hover:text-white rounded-full transform hover:-translate-y-1 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                Let's Connect
+                            </a>
                         </div>
                     </div>
-                    <div
-                        class="hero-image flex justify-center items-center opacity-0 transform translate-y-8 transition-all duration-700">
+                    
+                    <div class="hero-image flex justify-center" data-aos="fade-up" data-aos-delay="200">
                         <div class="relative w-64 h-64 md:w-72 md:h-72">
-                            <div class="absolute top-[-10px] left-[-10px] w-[calc(100%+20px)] h-[calc(100%+20px)] border-2 border-dashed border-primary rounded-full animate-rotate"
-                                id="profile-outline"></div>
-                            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg animate-float"
-                                id="profile-img">
-                                <img src="static/images/austin_sitting_by_river.jpg"
-                                    alt="Austin Coveney sitting by a river looking out across the water"
-                                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                            <div class="absolute top-[-10px] left-[-10px] w-[calc(100%+20px)] h-[calc(100%+20px)] border-2 border-dashed border-primary dark:border-primary-light rounded-full animate-rotate"></div>
+                            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-dark shadow-lg animate-float">
+                                <!-- Replace with your actual image -->
+                                <div class="w-full h-full placeholder-img" aria-label="Austin Coveney professional headshot"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="social-icons fixed left-4 md:left-8 bottom-4 md:bottom-8 flex gap-4 z-10">
-                <a href="https://linkedin.com/in/austin-coveney" aria-label="LinkedIn Profile" target="_blank"
-                    class="flex justify-center items-center w-10 h-10 bg-white rounded-full text-primary text-lg shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
-                    <i class="fab fa-linkedin"></i>
+            
+            <div class="social-icons fixed left-4 md:left-8 bottom-4 md:bottom-8 flex flex-col gap-4 z-10">
+                <a href="https://linkedin.com/in/austin-coveney" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-dark-light text-primary dark:text-primary-light rounded-full shadow-md hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                    <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://instagram.com/austin.coveney" aria-label="Instagram Profile" target="_blank"
-                    class="flex justify-center items-center w-10 h-10 bg-white rounded-full text-primary text-lg shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://github.com/austincoveney" aria-label="Instagram Profile" target="_blank"
-                    class="flex justify-center items-center w-10 h-10 bg-white rounded-full text-primary text-lg shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
+                <a href="https://github.com/austincoveney" target="_blank" rel="noopener" aria-label="GitHub" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-dark-light text-primary dark:text-primary-light rounded-full shadow-md hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
                     <i class="fab fa-github"></i>
                 </a>
+                <a href="https://instagram.com/austin.coveney" target="_blank" rel="noopener" aria-label="Instagram" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-dark-light text-primary dark:text-primary-light rounded-full shadow-md hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
-
-            <div
-                class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-gray cursor-pointer animate-bounce">
-                <span class="text-sm mb-2">Scroll Down</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
+            
+            <button class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-500 dark:text-gray-400 cursor-pointer animate-bounce-slow focus:outline-none" aria-label="Scroll down">
+                <span class="block text-sm mb-1">Scroll Down</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </button>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4 md:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">About
-                        Me</span>
-                    <h2
-                        class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">
-                        My Background & Experience</h2>
+        <section id="about" class="py-20 bg-white dark:bg-dark">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-primary dark:text-primary-light text-lg uppercase tracking-wider">About Me</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">My Background & Experience</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
                 </div>
-                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                    <div>
-                        <p class="text-gray mb-6">I'm a dynamic <span
-                                class="text-primary font-semibold">entrepreneur</span> with expertise in
-                            <span class="text-primary font-semibold">sales and marketing</span>. With
-                            experience across
-                            multiple businesses, I specialize in creating and scaling ventures while
-                            developing
-                            meaningful client relationships.
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            I'm a dynamic <span class="text-primary dark:text-primary-light font-semibold">web developer and entrepreneur</span> with expertise in creating digital solutions and implementing sales strategies. With experience across multiple projects, I combine technical skills with business acumen to create effective solutions.
                         </p>
-                        <p class="text-gray mb-8">My approach combines strategic business thinking with
-                            creative
-                            marketing solutions to drive growth. I thrive in fast-paced environments and
-                            enjoy taking on
-                            leadership roles in diverse business settings.</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-                            <div class="flex flex-col">
-                                <span class="font-semibold text-dark mb-2">Name:</span>
-                                <span class="text-gray">Austin Coveney</span>
+                        <p class="text-gray-600 dark:text-gray-300 mb-8">
+                            My approach blends strategic business thinking with technical implementation to drive growth. I use technologies like HTML, CSS, Python, and AI systems to create efficient and user-friendly digital experiences that solve real problems.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                            <div>
+                                <h3 class="font-semibold mb-2">Name:</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Austin Coveney</p>
                             </div>
-                            <div class="flex flex-col">
-                                <span class="font-semibold text-dark mb-2">Email:</span>
-                                <span class="text-gray">austin@austincoveney.uk</span>
+                            <div>
+                                <h3 class="font-semibold mb-2">Email:</h3>
+                                <p class="text-gray-600 dark:text-gray-300">austin@austincoveney.uk</p>
                             </div>
-                            <div class="flex flex-col">
-                                <span class="font-semibold text-dark mb-2">Location:</span>
-                                <span class="text-gray">Farnborough, UK</span>
+                            <div>
+                                <h3 class="font-semibold mb-2">Location:</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Farnborough, UK</p>
                             </div>
-                            <div class="flex flex-col">
-                                <span class="font-semibold text-dark mb-2">Available for:</span>
-                                <span class="text-gray">Full-time employment, Business partnerships,
-                                    Consulting</span>
+                            <div>
+                                <h3 class="font-semibold mb-2">Available for:</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Development Projects, Consulting, Full-time Roles</p>
                             </div>
                         </div>
-                        <a href="static/images/Austin Coveney CV.jpg"
-                            class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-full font-medium shadow-md transition-all duration-300 transform hover:-translate-y-1"
-                            id="download-cv" download>
-                            Download CV <i
-                                class="fas fa-download ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+                        
+                        <a href="#" class="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-full shadow-md transform hover:-translate-y-1 transition-all">
+                            Download CV <i class="fas fa-download ml-2"></i>
                         </a>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-8 md:mt-0">
-                        <div
-                            class="bg-white rounded-lg p-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-lg relative overflow-hidden group">
-                            <div
-                                class="relative z-10 flex justify-center items-center w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full text-primary text-2xl transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
-                                <i class="fas fa-briefcase"></i>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6" data-aos="fade-left">
+                        <div class="bg-gray-50 dark:bg-dark-light rounded-lg p-6 text-center shadow-md hover:shadow-lg transform hover:-translate-y-2 transition-all">
+                            <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light rounded-full flex items-center justify-center text-2xl">
+                                <i class="fas fa-code"></i>
                             </div>
-                            <h3 class="text-3xl font-bold mb-2 relative z-10">3+</h3>
-                            <p class="text-gray relative z-10">Years Experience</p>
+                            <h3 class="text-3xl font-bold mb-1">3+</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Years Experience</p>
                         </div>
-                        <div
-                            class="bg-white rounded-lg p-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-lg relative overflow-hidden group">
-                            <div
-                                class="relative z-10 flex justify-center items-center w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full text-primary text-2xl transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
+                        
+                        <div class="bg-gray-50 dark:bg-dark-light rounded-lg p-6 text-center shadow-md hover:shadow-lg transform hover:-translate-y-2 transition-all">
+                            <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light rounded-full flex items-center justify-center text-2xl">
                                 <i class="fas fa-building"></i>
                             </div>
-                            <h3 class="text-3xl font-bold mb-2 relative z-10">3</h3>
-                            <p class="text-gray relative z-10">Business Ventures</p>
+                            <h3 class="text-3xl font-bold mb-1">2+</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Business Ventures</p>
                         </div>
-                        <div
-                            class="bg-white rounded-lg p-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-lg relative overflow-hidden group">
-                            <div
-                                class="relative z-10 flex justify-center items-center w-16 h-16 mx-auto mb-6 bg-blue-100 rounded-full text-primary text-2xl transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
-                                <i class="fas fa-handshake"></i>
+                        
+                        <div class="bg-gray-50 dark:bg-dark-light rounded-lg p-6 text-center shadow-md hover:shadow-lg transform hover:-translate-y-2 transition-all">
+                            <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light rounded-full flex items-center justify-center text-2xl">
+                                <i class="fas fa-laptop-code"></i>
                             </div>
-                            <h3 class="text-3xl font-bold mb-2 relative z-10">2+</h3>
-                            <p class="text-gray relative z-10">Years in Sales</p>
+                            <h3 class="text-3xl font-bold mb-1">3+</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Coding Languages</p>
                         </div>
                     </div>
                 </div>
@@ -384,133 +378,137 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-16 md:py-24 bg-light">
-            <div class="container mx-auto px-4 md:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">My
-                        Specialties</span>
-                    <h2
-                        class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">
-                        My Skills & Expertise</h2>
+        <section id="skills" class="py-20 bg-gray-50 dark:bg-dark-light">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-primary dark:text-primary-light text-lg uppercase tracking-wider">My Specialties</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">My Skills & Expertise</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8 md:gap-12 mt-12">
-                    <div class="md:col-span-1">
-                        <p class="text-gray mb-6 leading-relaxed">I've cultivated a diverse set of skills
-                            throughout my
-                            entrepreneurial journey. My expertise spans across business development, sales,
-                            and
-                            marketing, allowing me to approach ventures with a well-rounded perspective.</p>
-                        <p class="text-gray leading-relaxed">I continuously enhance my skills to stay
-                            current with
-                            market trends and business opportunities.</p>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="md:col-span-1" data-aos="fade-right">
+                        <p class="text-gray-600 dark:text-gray-300 mb-6">
+                            I've cultivated a diverse set of skills throughout my journey as a developer and entrepreneur. My expertise spans across web development, business operations, and digital marketing, allowing me to approach projects with a well-rounded perspective.
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            I continuously enhance my skills to stay current with technological trends and business opportunities, focusing particularly on implementing AI systems to optimize workflows.
+                        </p>
                     </div>
-                    <div class="md:col-span-2 grid md:grid-cols-2 gap-8 md:gap-10">
-                        <div class="skills-category">
-                            <h3
-                                class="text-2xl font-bold mb-8 pb-4 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-primary after:rounded-full after:transition-all hover:after:w-full">
-                                Business Skills</h3>
-                            <div class="space-y-7">
-                                <div class="flex flex-wrap items-center">
-                                    <span class="w-1/3 font-semibold text-lg text-dark">Sales</span>
-                                    <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 95%;"
-                                            data-progress="95"></div>
+                    
+                    <div class="md:col-span-2 grid md:grid-cols-2 gap-8" data-aos="fade-left">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 pb-2 border-b-2 border-primary inline-block">
+                                Development Skills
+                            </h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">Python (Security & Data)</span>
+                                        <span class="text-primary dark:text-primary-light">95%</span>
                                     </div>
-                                    <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">95%</span>
+                                    <div class="h-2 bg-gray-200 dark:bg-dark rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary dark:bg-primary-light rounded-full" style="width: 95%"></div>
+                                    </div>
                                 </div>
-                                <div class="flex flex-wrap items-center">
-                                    <span class="w-1/3 font-semibold text-lg text-dark">Marketing</span>
-                                    <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 90%;"
-                                            data-progress="90"></div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">HTML/CSS</span>
+                                        <span class="text-primary dark:text-primary-light">90%</span>
                                     </div>
-                                    <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">90%</span>
+                                    <div class="h-2 bg-gray-200 dark:bg-dark rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary dark:bg-primary-light rounded-full" style="width: 90%"></div>
+                                    </div>
                                 </div>
-                                <div class="flex flex-wrap items-center">
-                                    <span class="w-1/3 font-semibold text-lg text-dark">Copywriting</span>
-                                    <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 85%;"
-                                            data-progress="85"></div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">JavaScript</span>
+                                        <span class="text-primary dark:text-primary-light">75%</span>
                                     </div>
-                                    <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">85%</span>
+                                    <div class="h-2 bg-gray-200 dark:bg-dark rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary dark:bg-primary-light rounded-full" style="width: 75%"></div>
+                                    </div>
                                 </div>
-                                <div class="flex flex-wrap items-center">
-                                    <span class="w-1/3 font-semibold text-lg text-dark">Business Dev</span>
-                                    <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 90%;"
-                                            data-progress="90"></div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">Linux Systems</span>
+                                        <span class="text-primary dark:text-primary-light">85%</span>
                                     </div>
-                                    <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">90%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skills-category">
-                            <h3
-                                class="text-2xl font-bold mb-8 pb-4 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-primary after:rounded-full after:transition-all hover:after:w-full">
-                                Technical Skills</h3>
-                            <div class="space-y-7">
-                                <div class="flex flex-wrap items-center">
-                                    <span class="w-1/3 font-semibold text-lg text-dark">WordPress</span>
-                                    <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 85%;"
-                                            data-progress="85"></div>
+                                    <div class="h-2 bg-gray-200 dark:bg-dark rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary dark:bg-primary-light rounded-full" style="width: 85%"></div>
                                     </div>
-                                    <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">85%</span>
-                                </div>
-                                <div class="flex flex-wrap items-center">
-                                    <span class="w-1/3 font-semibold text-lg text-dark">Figma</span>
-                                    <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 80%;"
-                                            data-progress="80"></div>
-                                    </div>
-                                    <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">80%</span>
-                                </div>
-                                <div class="flex flex-wrap items-center">
-                                    <span class="w-1/3 font-semibold text-lg text-dark">Elementor</span>
-                                    <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 85%;"
-                                            data-progress="85"></div>
-                                    </div>
-                                    <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">85%</span>
-                                </div>
-                                <div class="flex flex-wrap items-center">
-                                    <span class="w-1/3 font-semibold text-lg text-dark">Google
-                                        Analytics</span>
-                                    <div class="w-1/2 h-2.5 bg-gray-light rounded-full overflow-hidden relative">
-                                        <div class="skill-progress h-full bg-primary rounded-full" style="width: 75%;"
-                                            data-progress="75"></div>
-                                    </div>
-                                    <span class="w-1/6 ml-auto text-sm font-medium text-primary text-right">75%</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="md:col-span-2">
-                            <h3
-                                class="text-2xl font-bold mb-8 pb-4 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-primary after:rounded-full after:transition-all hover:after:w-full">
-                                Soft Skills</h3>
+                        
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 pb-2 border-b-2 border-primary inline-block">
+                                Business Skills
+                            </h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">Digital Marketing</span>
+                                        <span class="text-primary dark:text-primary-light">90%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-dark rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary dark:bg-primary-light rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">Sales & Negotiation</span>
+                                        <span class="text-primary dark:text-primary-light">95%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-dark rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary dark:bg-primary-light rounded-full" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">Project Management</span>
+                                        <span class="text-primary dark:text-primary-light">85%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-dark rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary dark:bg-primary-light rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium">Business Strategy</span>
+                                        <span class="text-primary dark:text-primary-light">90%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-dark rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary dark:bg-primary-light rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:col-span-2" data-aos="fade-up">
+                            <h3 class="text-2xl font-bold mb-6 pb-2 border-b-2 border-primary inline-block">
+                                Specialized Skills
+                            </h3>
+                            
                             <div class="flex flex-wrap gap-3">
-                                <span
-                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Team
-                                    Leadership</span>
-                                <span
-                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Staff
-                                    Communication</span>
-                                <span
-                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Time
-                                    Management</span>
-                                <span
-                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Conflict
-                                    Resolution</span>
-                                <span
-                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Client
-                                    Relations</span>
-                                <span
-                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Strategic
-                                    Thinking</span>
-                                <span
-                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Adaptability</span>
-                                <span
-                                    class="soft-skill bg-blue-100 text-primary px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">Creativity</span>
+                                <span class="bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light px-4 py-2 rounded-full hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all">Problem Solving</span>
+                                <span class="bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light px-4 py-2 rounded-full hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all">Team Leadership</span>
+                                <span class="bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light px-4 py-2 rounded-full hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all">Communication</span>
+                                <span class="bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light px-4 py-2 rounded-full hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all">Adaptability</span>
+                                <span class="bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light px-4 py-2 rounded-full hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all">Penetration Testing</span>
+                                <span class="bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light px-4 py-2 rounded-full hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all">Cryptography</span>
+                                <span class="bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light px-4 py-2 rounded-full hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all">System Hardening</span>
+                                <span class="bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light px-4 py-2 rounded-full hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all">Data Security</span>
+                                <span class="bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light px-4 py-2 rounded-full hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all">Public Speaking</span>
+                                <span class="bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light px-4 py-2 rounded-full hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all">Client Relations</span>
                             </div>
                         </div>
                     </div>
@@ -518,364 +516,276 @@
             </div>
         </section>
 
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4 md:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">My
-                        Recent
-                        Work</span>
-                    <h2
-                        class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">
-                        Featured Projects</h2>
-                </div>
-                <div class="flex justify-center flex-wrap gap-4 mb-12">
-                    <button
-                        class="filter-btn bg-primary text-white px-4 py-2 rounded-full font-medium shadow-md transform transition-all duration-300 hover:-translate-y-1"
-                        data-filter="all">All</button>
-                    <button
-                        class="filter-btn bg-transparent text-gray border border-gray-light px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1"
-                        data-filter="business">Business Ventures</button>
-                    <button
-                        class="filter-btn bg-transparent text-gray border border-gray-light px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1"
-                        data-filter="marketing">Marketing</button>
-                    <button
-                        class="filter-btn bg-transparent text-gray border border-gray-light px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1"
-                        data-filter="events">Events</button>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                    <!-- Project 1 -->
-                    <div class="portfolio-item block relative rounded-lg overflow-hidden shadow-md h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                        data-category="marketing">
-                        <div class="w-full h-full">
-                            <img src="static/images/digigrow_full_navy_green_widescreen.jpg"
-                                alt="The logo of DigiGrow, a digital marketing agency"
-                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white dark:bg-dark">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-primary dark:text-primary-light text-lg uppercase tracking-wider">My Recent Work</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Featured Projects</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="flex justify-center flex-wrap gap-3 mb-12" data-aos="fade-up">
+                <button class="portfolio-filter active px-5 py-2 rounded-full bg-primary text-white hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary" data-filter="all" aria-pressed="true">All</button>
+                <button class="portfolio-filter px-5 py-2 rounded-full bg-gray-100 dark:bg-dark-light text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary" data-filter="web" aria-pressed="false">Web Development</button>
+                <button class="portfolio-filter px-5 py-2 rounded-full bg-gray-100 dark:bg-dark-light text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary" data-filter="security" aria-pressed="false">Cybersecurity</button>
+                <button class="portfolio-filter px-5 py-2 rounded-full bg-gray-100 dark:bg-dark-light text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary" data-filter="business" aria-pressed="false">Business</button>
+                <button class="portfolio-filter px-5 py-2 rounded-full bg-gray-100 dark:bg-dark-light text-gray-700 dark:text-gray-300 hover:bg-primary hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary" data-filter="marketing" aria-pressed="false">Marketing</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Python Encryption Tool -->
+                <div class="portfolio-item" data-category="security" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <div class="w-full h-64 placeholder-img bg-gradient-to-r from-gray-200 to-gray-300 dark:from-dark-light dark:to-dark flex items-center justify-center" aria-label="Python Encryption Tool">
+                            <i class="fas fa-shield-alt text-gray-400 dark:text-gray-600 text-6xl"></i>
                         </div>
-                        <div
-                            class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-dark/90 flex justify-center items-center opacity-0 transition-opacity duration-300">
-                            <div
-                                class="portfolio-info text-center text-white p-8 transform translate-y-5 transition-transform duration-300 w-full">
-                                <h3 class="text-2xl text-white mb-2">DigiGrow LTD</h3>
-                                <p class="text-gray-light mb-6">Digital Marketing Agency</p>
-                                <div class="flex justify-center">
-                                    <a href="javascript:void(0)"
-                                        class="px-4 py-2 bg-primary text-white rounded-full font-medium transition-all duration-300 hover:-translate-y-1 project-modal-trigger"
-                                        data-project="digigrow">Read More</a>
-                                </div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="p-6 w-full">
+                                <h3 class="text-xl font-bold text-white mb-2">Python Encryption Tool</h3>
+                                <p class="text-gray-300 mb-4">Custom File & Text Encryption</p>
+                                <button class="inline-block px-4 py-2 bg-primary text-white rounded-full text-sm hover:bg-primary-dark transition-colors project-details focus:outline-none focus:ring-2 focus:ring-white" data-project="encryption">View Details</button>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Project 2 -->
-                    <div class="portfolio-item block relative rounded-lg overflow-hidden shadow-md h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                        data-category="events">
-                        <div class="w-full h-full">
-                            <img src="static/images/yip_logo.png"
-                                alt="The logo of the Young Innovators Project, a youth project"
-                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                
+                <!-- Project 2: DigiGrow LTD -->
+                <div class="portfolio-item" data-category="business web" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <div class="w-full h-64 placeholder-img bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 flex items-center justify-center" aria-label="DigiGrow LTD Project">
+                            <i class="fas fa-chart-line text-gray-400 dark:text-gray-600 text-6xl"></i>
                         </div>
-                        <div
-                            class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-dark/90 flex justify-center items-center opacity-0 transition-opacity duration-300">
-                            <div
-                                class="portfolio-info text-center text-white p-8 transform translate-y-5 transition-transform duration-300 w-full">
-                                <h3 class="text-2xl text-white mb-2">Young Innovators Project</h3>
-                                <p class="text-gray-light mb-6">Youth Business Development</p>
-                                <div class="flex justify-center">
-                                    <a href="javascript:void(0)"
-                                        class="px-4 py-2 bg-primary text-white rounded-full font-medium transition-all duration-300 hover:-translate-y-1 project-modal-trigger"
-                                        data-project="yip">Read More</a>
-                                </div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="p-6 w-full">
+                                <h3 class="text-xl font-bold text-white mb-2">DigiGrow LTD</h3>
+                                <p class="text-gray-300 mb-4">Digital Marketing Company</p>
+                                <button class="inline-block px-4 py-2 bg-primary text-white rounded-full text-sm hover:bg-primary-dark transition-colors project-details focus:outline-none focus:ring-2 focus:ring-white" data-project="digigrow">View Details</button>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Project 4 -->
-                    <div class="portfolio-item block relative rounded-lg overflow-hidden shadow-md h-64 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                        data-category="business">
-                        <div class="w-full h-full">
-                            <img src="static/images/thatched_tavern_logo_dark.jpg"
-                                alt="The logo of the thatched tavern, a local pub"
-                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                
+                <!-- Project 3: Web Data Scraper -->
+                <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <div class="w-full h-64 placeholder-img bg-gradient-to-r from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 flex items-center justify-center" aria-label="Web Data Scraper Project">
+                            <i class="fas fa-code text-gray-400 dark:text-gray-600 text-6xl"></i>
                         </div>
-                        <div
-                            class="portfolio-overlay absolute top-0 left-0 w-full h-full bg-dark/90 flex justify-center items-center opacity-0 transition-opacity duration-300">
-                            <div
-                                class="portfolio-info text-center text-white p-8 transform translate-y-5 transition-transform duration-300 w-full">
-                                <h3 class="text-2xl text-white mb-2">The Thatched Tavern</h3>
-                                <p class="text-gray-light mb-6">Hospitality Management</p>
-                                <div class="flex justify-center">
-                                    <a href="javascript:void(0)"
-                                        class="px-4 py-2 bg-primary text-white rounded-full font-medium transition-all duration-300 hover:-translate-y-1 project-modal-trigger"
-                                        data-project="tavern">Read More</a>
-                                </div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="p-6 w-full">
+                                <h3 class="text-xl font-bold text-white mb-2">Web Data Scraper</h3>
+                                <p class="text-gray-300 mb-4">Python-based Business Tool</p>
+                                <button class="inline-block px-4 py-2 bg-primary text-white rounded-full text-sm hover:bg-primary-dark transition-colors project-details focus:outline-none focus:ring-2 focus:ring-white" data-project="scraper">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4: Linux Security Research -->
+                <div class="portfolio-item" data-category="security" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <div class="w-full h-64 placeholder-img bg-gradient-to-r from-gray-200 to-gray-300 dark:from-dark-light dark:to-dark flex items-center justify-center" aria-label="Linux Security Research">
+                            <i class="fab fa-linux text-gray-400 dark:text-gray-600 text-6xl"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="p-6 w-full">
+                                <h3 class="text-xl font-bold text-white mb-2">Linux Security Research</h3>
+                                <p class="text-gray-300 mb-4">System Hardening & Penetration Testing</p>
+                                <button class="inline-block px-4 py-2 bg-primary text-white rounded-full text-sm hover:bg-primary-dark transition-colors project-details focus:outline-none focus:ring-2 focus:ring-white" data-project="linux">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5: Young Innovators Project -->
+                <div class="portfolio-item" data-category="business marketing" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <div class="w-full h-64 placeholder-img bg-gradient-to-r from-yellow-100 to-yellow-200 dark:from-yellow-900/30 dark:to-yellow-800/30 flex items-center justify-center" aria-label="Young Innovators Project">
+                            <i class="fas fa-users text-gray-400 dark:text-gray-600 text-6xl"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="p-6 w-full">
+                                <h3 class="text-xl font-bold text-white mb-2">Young Innovators Project</h3>
+                                <p class="text-gray-300 mb-4">Youth Business Development</p>
+                                <button class="inline-block px-4 py-2 bg-primary text-white rounded-full text-sm hover:bg-primary-dark transition-colors project-details focus:outline-none focus:ring-2 focus:ring-white" data-project="yip">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6: Code Snippet Repository -->
+                <div class="portfolio-item" data-category="web security" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <div class="w-full h-64 placeholder-img bg-gradient-to-r from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 flex items-center justify-center" aria-label="Code Snippet Repository">
+                            <i class="fas fa-code-branch text-gray-400 dark:text-gray-600 text-6xl"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="p-6 w-full">
+                                <h3 class="text-xl font-bold text-white mb-2">Code Snippet Repository</h3>
+                                <p class="text-gray-300 mb-4">Collection of Security & Web Tools</p>
+                                <button class="inline-block px-4 py-2 bg-primary text-white rounded-full text-sm hover:bg-primary-dark transition-colors project-details focus:outline-none focus:ring-2 focus:ring-white" data-project="snippets">View Details</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-16 md:py-24 bg-light">
-            <div class="container mx-auto px-4 md:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">My
-                        Journey</span>
-                    <h2
-                        class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">
-                        Education & Experience</h2>
+        <section id="experience" class="py-20 bg-gray-50 dark:bg-dark-light">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-primary dark:text-primary-light text-lg uppercase tracking-wider">My Journey</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">Education & Experience</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
                 </div>
-                <div class="max-w-4xl mx-auto">
-                    <div class="flex justify-center gap-6 mb-16">
-                        <button id="tab-experience"
-                            class="timeline-tab bg-primary text-white px-5 py-3 rounded-full font-medium shadow-md transition-all duration-300 hover:-translate-y-1"
-                            data-tab="experience">Experience</button>
-                        <button id="tab-education"
-                            class="timeline-tab bg-transparent text-gray border border-gray-light px-5 py-3 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1"
-                            data-tab="education">Education</button>
+                
+                <div class="mb-12 flex justify-center" data-aos="fade-up">
+                    <div class="inline-flex p-1 bg-gray-200 dark:bg-dark rounded-full">
+                        <button class="timeline-btn active px-6 py-2 rounded-full bg-primary text-white" data-target="experience">Experience</button>
+                        <button class="timeline-btn px-6 py-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-dark-light" data-target="education">Education</button>
                     </div>
-
-                    <!-- Experience Timeline -->
-                    <div class="timeline timeline-line relative block" id="experience-timeline">
-                        <!-- Experience 1 -->
-                        <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div
-                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div
-                                class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                                <span class="text-sm font-medium text-primary mb-4 block">2024 -
-                                    Present</span>
-                                <h3 class="text-2xl mb-2">Co-Partner</h3>
-                                <h4 class="text-base font-medium text-gray mb-6">The Young Innovators
-                                    Project</h4>
-                                <p class="text-gray mb-6">Running a project with Farnborough councillors and
-                                    the mayor
-                                    to organize and sell events aimed at helping people aged 13-25 get into
-                                    business.
-                                    Managing sales and organization, developing business communication
-                                    skills.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Event
-                                        Planning</span>
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Sales</span>
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Youth
-                                        Entrepreneurship</span>
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Public
-                                        Relations</span>
+                </div>
+                
+                <!-- Experience Timeline -->
+                <div id="experience-timeline" class="max-w-4xl mx-auto relative">
+                    <div class="absolute top-0 bottom-0 left-8 md:left-1/2 w-0.5 bg-primary/30 dark:bg-primary-light/30 -ml-0.5"></div>
+                    
+                    <!-- Experience Item 1 -->
+                    <div class="timeline-item mb-16 relative" data-aos="fade-up">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                                <div class="bg-white dark:bg-dark p-6 rounded-lg shadow-md inline-block">
+                                    <span class="text-primary dark:text-primary-light font-medium">Sept 2024 - Present</span>
+                                    <h3 class="text-xl font-bold mt-1">Company Director</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 font-medium mt-1 mb-3">DigiGrow LTD</p>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Co-running a digital marketing company focused on creating and managing marketing for my own business and other clients. Developing skills in client management, web development, and digital strategy.
+                                    </p>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Experience 2 -->
-                        <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div
-                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div
-                                class="timeline-content timeline-content-even relative w-full md:w-5/12 ml-16 md:ml-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                                <span class="text-sm font-medium text-primary mb-4 block">Sept 2024 -
-                                    Present</span>
-                                <h3 class="text-2xl mb-2">Company Director</h3>
-                                <h4 class="text-base font-medium text-gray mb-6">DigiGrow LTD</h4>
-                                <p class="text-gray mb-6">Co-running a digital marketing company focused on
-                                    creating and
-                                    managing marketing for my own business and other clients. Developing
-                                    skills in sales
-                                    and client education while building a strong portfolio.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Digital
-                                        Marketing</span>
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Client
-                                        Relations</span>
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Social
-                                        Media</span>
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Copywriting</span>
-                                </div>
+                            
+                            <div class="absolute left-0 md:left-1/2 top-6 -ml-[11px] md:-ml-3.5 w-7 h-7 rounded-full bg-primary dark:bg-primary-light border-4 border-white dark:border-dark z-10"></div>
+                            
+                            <div class="md:w-1/2 md:pl-12 md:text-left pl-12 md:pl-0">
+                                <!-- Empty for layout purposes -->
                             </div>
                         </div>
-
-                        <!-- Experience 3 -->
-                        <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div
-                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
-                                <i class="fas fa-briefcase"></i>
+                    </div>
+                    
+                    <!-- Experience Item 2 -->
+                    <div class="timeline-item mb-16 relative" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0 hidden md:block">
+                                <!-- Empty for layout purposes -->
                             </div>
-                            <div
-                                class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                                <span class="text-sm font-medium text-primary mb-4 block">Aug 2024 -
-                                    Present</span>
-                                <h3 class="text-2xl mb-2">Company Director</h3>
-                                <h4 class="text-base font-medium text-gray mb-6">Basecamp Airsoft Ltd</h4>
-                                <p class="text-gray mb-6">Running an Airsoft ticket sales startup, learning
-                                    to unionize
-                                    businesses and sell to them effectively. Developing resource management
-                                    optimization
-                                    skills and implementing quick, calculated thinking to benefit the
-                                    business.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Business
-                                        Development</span>
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Sales
-                                        Strategy</span>
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Resource
-                                        Management</span>
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">B2B
-                                        Relations</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Experience 4 -->
-                        <div class="timeline-item relative opacity-0 translate-y-5 transition-all duration-500">
-                            <div
-                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div
-                                class="timeline-content timeline-content-even relative w-full md:w-5/12 ml-16 md:ml-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                                <span class="text-sm font-medium text-primary mb-4 block">2022 -
-                                    Present</span>
-                                <h3 class="text-2xl mb-2">Server</h3>
-                                <h4 class="text-base font-medium text-gray mb-6">The Thatched Tavern</h4>
-                                <p class="text-gray mb-6">Working at The Thatched Tavern for 3 years,
-                                    developing
-                                    customer service skills and team management abilities. Advanced to
-                                    management role,
-                                    gaining deeper insight into effective communication and sales in the
-                                    hospitality
-                                    industry.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Team
-                                        Management</span>
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Customer
-                                        Service</span>
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Staff
-                                        Communication</span>
-                                    <span
-                                        class="text-xs px-3 py-1 bg-blue-100 text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white hover:-translate-y-1">Conflict
-                                        Resolution</span>
+                            
+                            <div class="absolute left-0 md:left-1/2 top-6 -ml-[11px] md:-ml-3.5 w-7 h-7 rounded-full bg-primary dark:bg-primary-light border-4 border-white dark:border-dark z-10"></div>
+                            
+                            <div class="md:w-1/2 md:pl-12 md:text-left pl-12 md:pl-0">
+                                <div class="bg-white dark:bg-dark p-6 rounded-lg shadow-md inline-block">
+                                    <span class="text-primary dark:text-primary-light font-medium">2024 - Present</span>
+                                    <h3 class="text-xl font-bold mt-1">Co-Partner</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 font-medium mt-1 mb-3">Young Innovators Project</p>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Working with Farnborough councillors and the mayor to organize events aimed at helping young people aged 13-25 develop business skills. Managing sales, public speaking, and event organization.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Education Timeline -->
-                    <div class="timeline timeline-line relative hidden" id="education-timeline">
-                        <!-- Education 1 -->
-                        <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div
-                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
-                                <i class="fas fa-graduation-cap"></i>
+                    
+                    <!-- Experience Item 3 -->
+                    <div class="timeline-item mb-16 relative" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                                <div class="bg-white dark:bg-dark p-6 rounded-lg shadow-md inline-block">
+                                    <span class="text-primary dark:text-primary-light font-medium">2022 - Present</span>
+                                    <h3 class="text-xl font-bold mt-1">Section Leader</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 font-medium mt-1 mb-3">The Thatched Tavern</p>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Managing a section of the restaurant, training new staff, handling POS systems and user interfaces, and working in high-pressure situations. Developed customer service and team management skills.
+                                    </p>
+                                </div>
                             </div>
-                            <div
-                                class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                                <span class="text-sm font-medium text-primary mb-4 block">2023 - 2025</span>
-                                <h3 class="text-2xl mb-2">BTEC Business</h3>
-                                <h4 class="text-base font-medium text-gray mb-6">The Sixth Form College
-                                    Farnborough</h4>
-                                <p class="text-gray">Studying business operations, marketing strategies, and
-                                    management
-                                    principles to build a strong foundation for entrepreneurial ventures.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Education 2 -->
-                        <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div
-                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div
-                                class="timeline-content timeline-content-even relative w-full md:w-5/12 ml-16 md:ml-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                                <span class="text-sm font-medium text-primary mb-4 block">2023 - 2025</span>
-                                <h3 class="text-2xl mb-2">BTEC Law</h3>
-                                <h4 class="text-base font-medium text-gray mb-6">The Sixth Form College
-                                    Farnborough</h4>
-                                <p class="text-gray">Learning about legal frameworks, business regulations,
-                                    and
-                                    contractual obligations essential for running successful and compliant
-                                    business
-                                    operations.</p>
+                            
+                            <div class="absolute left-0 md:left-1/2 top-6 -ml-[11px] md:-ml-3.5 w-7 h-7 rounded-full bg-primary dark:bg-primary-light border-4 border-white dark:border-dark z-10"></div>
+                            
+                            <div class="md:w-1/2 md:pl-12 md:text-left pl-12 md:pl-0">
+                                <!-- Empty for layout purposes -->
                             </div>
                         </div>
-
-                        <!-- Education 3 -->
-                        <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div
-                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
-                                <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+                
+                <!-- Education Timeline -->
+                <div id="education-timeline" class="max-w-4xl mx-auto relative hidden">
+                    <div class="absolute top-0 bottom-0 left-8 md:left-1/2 w-0.5 bg-primary/30 dark:bg-primary-light/30 -ml-0.5"></div>
+                    
+                    <!-- Education Item 1 -->
+                    <div class="timeline-item mb-16 relative" data-aos="fade-up">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                                <div class="bg-white dark:bg-dark p-6 rounded-lg shadow-md inline-block">
+                                    <span class="text-primary dark:text-primary-light font-medium">2023 - 2025</span>
+                                    <h3 class="text-xl font-bold mt-1">BTEC in Business, IT, and Law</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 font-medium mt-1 mb-3">The Sixth Form College Farnborough</p>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Studying business operations, IT systems, and legal frameworks with predicted distinctions in all subjects. Developed technical and analytical skills applicable to both technology and business.
+                                    </p>
+                                </div>
                             </div>
-                            <div
-                                class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                                <span class="text-sm font-medium text-primary mb-4 block">2023 - 2025</span>
-                                <h3 class="text-2xl mb-2">BTEC IT</h3>
-                                <h4 class="text-base font-medium text-gray mb-6">The Sixth Form College
-                                    Farnborough</h4>
-                                <p class="text-gray">Developing technical skills in information technology
-                                    with
-                                    applications for digital marketing, data analysis, and modern business
-                                    operations.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Education 4 -->
-                        <div class="timeline-item relative mb-20 opacity-0 translate-y-5 transition-all duration-500">
-                            <div
-                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div
-                                class="timeline-content timeline-content-even relative w-full md:w-5/12 ml-16 md:ml-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                                <span class="text-sm font-medium text-primary mb-4 block">2024</span>
-                                <h3 class="text-2xl mb-2">Business Management</h3>
-                                <h4 class="text-base font-medium text-gray mb-6">Self-Directed Learning</h4>
-                                <p class="text-gray">Self-directed learning in business management
-                                    strategies, marketing
-                                    techniques, and sales approaches through practical experience running
-                                    multiple
-                                    businesses and studying industry best practices.</p>
+                            
+                            <div class="absolute left-0 md:left-1/2 top-6 -ml-[11px] md:-ml-3.5 w-7 h-7 rounded-full bg-primary dark:bg-primary-light border-4 border-white dark:border-dark z-10"></div>
+                            
+                            <div class="md:w-1/2 md:pl-12 md:text-left pl-12 md:pl-0">
+                                <!-- Empty for layout purposes -->
                             </div>
                         </div>
-
-                        <!-- Education 5 -->
-                        <div class="timeline-item relative opacity-0 translate-y-5 transition-all duration-500">
-                            <div
-                                class="timeline-icon absolute top-0 left-1/2 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 w-12 h-12 bg-primary rounded-full flex justify-center items-center text-white text-xl shadow-lg z-10 transition-all duration-300 hover:scale-110 hover:bg-primary-dark">
-                                <i class="fas fa-laptop"></i>
+                    </div>
+                    
+                    <!-- Education Item 2 -->
+                    <div class="timeline-item mb-16 relative" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0 hidden md:block">
+                                <!-- Empty for layout purposes -->
                             </div>
-                            <div
-                                class="timeline-content timeline-content-odd relative w-full md:w-5/12 ml-16 md:ml-auto md:mr-0 bg-white rounded-lg p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                                <span class="text-sm font-medium text-primary mb-4 block">2023</span>
-                                <h3 class="text-2xl mb-2">Digital Marketing</h3>
-                                <h4 class="text-base font-medium text-gray mb-6">Online Courses & Practical
-                                    Experience
-                                </h4>
-                                <p class="text-gray">Developed digital marketing skills through a
-                                    combination of online
-                                    courses and practical application in real-world business scenarios,
-                                    particularly
-                                    focusing on social media marketing and copywriting.</p>
+                            
+                            <div class="absolute left-0 md:left-1/2 top-6 -ml-[11px] md:-ml-3.5 w-7 h-7 rounded-full bg-primary dark:bg-primary-light border-4 border-white dark:border-dark z-10"></div>
+                            
+                            <div class="md:w-1/2 md:pl-12 md:text-left pl-12 md:pl-0">
+                                <div class="bg-white dark:bg-dark p-6 rounded-lg shadow-md inline-block">
+                                    <span class="text-primary dark:text-primary-light font-medium">2018 - 2022</span>
+                                    <h3 class="text-xl font-bold mt-1">GCSEs</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 font-medium mt-1 mb-3">Charters School, Ascot</p>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Achieved GCSEs in Maths, English, Science, History, and Food Preparation and Nutrition, along with BTEC Tech Award in Enterprise. Built a foundation for further education in business and technology.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education Item 3 -->
+                    <div class="timeline-item mb-16 relative" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                                <div class="bg-white dark:bg-dark p-6 rounded-lg shadow-md inline-block">
+                                    <span class="text-primary dark:text-primary-light font-medium">2024 - Present</span>
+                                    <h3 class="text-xl font-bold mt-1">Self-Directed Learning</h3>
+                                    <p class="text-gray-600 dark:text-gray-300 font-medium mt-1 mb-3">Web Development & AI Systems</p>
+                                    <p class="text-gray-600 dark:text-gray-300">
+                                        Self-taught in HTML, CSS, Python, and AI systems implementation. Created projects including a web data scraper and implemented AI workflows for business optimization.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="absolute left-0 md:left-1/2 top-6 -ml-[11px] md:-ml-3.5 w-7 h-7 rounded-full bg-primary dark:bg-primary-light border-4 border-white dark:border-dark z-10"></div>
+                            
+                            <div class="md:w-1/2 md:pl-12 md:text-left pl-12 md:pl-0">
+                                <!-- Empty for layout purposes -->
                             </div>
                         </div>
                     </div>
@@ -884,194 +794,659 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4 md:px-8">
-                <div class="text-center mb-16">
-                    <span class="text-lg text-primary uppercase tracking-wider font-medium block mb-4">Get
-                        In
-                        Touch</span>
-                    <h2
-                        class="text-3xl md:text-4xl font-bold text-dark inline-block relative after:content-[''] after:absolute after:bottom-[-1rem] after:left-1/2 after:-translate-x-1/2 after:w-12 after:h-1 after:bg-primary after:rounded-full">
-                        Contact Me</h2>
+        <section id="contact" class="py-20 bg-white dark:bg-dark">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-primary dark:text-primary-light text-lg uppercase tracking-wider">Get In Touch</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">Contact Me</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
                 </div>
-                <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-                    <div>
-                        <div class="mb-10">
-                            <h3 class="text-2xl md:text-3xl font-bold mb-4">Let's Work Together</h3>
-                            <p class="text-gray">I'm interested in full-time employment, business
-                                partnerships,
-                                collaborations, and consulting opportunities. If you have a project that
-                                needs marketing
-                                strategy or sales expertise, please don't hesitate to contact me.</p>
-                        </div>
-                        <div class="space-y-8 mb-10">
-                            <div class="flex items-start gap-5 group">
-                                <div
-                                    class="flex justify-center items-center w-12 h-12 bg-blue-100 rounded-full text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
-                                    <i class="fas fa-map-marker-alt"></i>
+                
+                <div class="grid md:grid-cols-2 gap-12" id="main-content">
+                    <div data-aos="fade-right">
+                        <h3 class="text-2xl font-bold mb-6">Let's Work Together</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-8">
+                            I'm interested in freelance opportunities, full-time positions, and collaborative projects. If you have a project that needs my expertise in web development, digital marketing, or business strategy, please get in touch.
+                        </p>
+                        
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light flex items-center justify-center text-xl shrink-0">
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-medium mb-2">Location</h4>
-                                    <p class="text-gray">Farnborough, UK</p>
+                                    <h4 class="text-lg font-semibold mb-1">Location</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">Farnborough, UK</p>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-5 group">
-                                <div
-                                    class="flex justify-center items-center w-12 h-12 bg-blue-100 rounded-full text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
-                                    <i class="fas fa-envelope"></i>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light flex items-center justify-center text-xl shrink-0">
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-medium mb-2">Email</h4>
-                                    <p><a href="mailto:austin@austincoveney.uk"
-                                            class="text-gray hover:text-primary transition-colors duration-300">austin@austincoveney.uk</a>
-                                    </p>
+                                    <h4 class="text-lg font-semibold mb-1">Email</h4>
+                                    <a href="mailto:austin@austincoveney.uk" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors">austin@austincoveney.uk</a>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-5 group">
-                                <div
-                                    class="flex justify-center items-center w-12 h-12 bg-blue-100 rounded-full text-primary text-xl transition-all duration-300 group-hover:bg-primary group-hover:text-white">
-                                    <i class="fas fa-phone-alt"></i>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-primary/20 text-primary dark:text-primary-light flex items-center justify-center text-xl shrink-0">
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-medium mb-2">Phone</h4>
-                                    <p><a href="tel:+447944199916"
-                                            class="text-gray hover:text-primary transition-colors duration-300">+44
-                                            7944
-                                            199916</a></p>
+                                    <h4 class="text-lg font-semibold mb-1">Phone</h4>
+                                    <a href="tel:+447944199916" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light transition-colors">+44 7944 199916</a>
                                 </div>
                             </div>
                         </div>
+                        
                         <div>
-                            <h4 class="text-lg font-medium mb-4">Find Me On</h4>
+                            <h4 class="text-lg font-semibold mb-4">Connect With Me</h4>
                             <div class="flex gap-4">
-                                <a href="https://linkedin.com/in/austin-coveney" aria-label="LinkedIn Profile"
-                                    target="_blank"
-                                    class="flex justify-center items-center w-12 h-12 bg-white rounded-full text-primary text-xl shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
-                                    <i class="fab fa-linkedin"></i>
+                                <a href="https://linkedin.com/in/austin-coveney" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-12 h-12 rounded-full bg-white dark:bg-dark-light shadow-md text-primary dark:text-primary-light flex items-center justify-center text-xl hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://instagram.com/austin.coveney" aria-label="Instagram Profile"
-                                    target="_blank"
-                                    class="flex justify-center items-center w-12 h-12 bg-white rounded-full text-primary text-xl shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
-                                    <i class="fab fa-instagram"></i>
+                                <a href="https://github.com/austincoveney" target="_blank" rel="noopener" aria-label="GitHub" class="w-12 h-12 rounded-full bg-white dark:bg-dark-light shadow-md text-primary dark:text-primary-light flex items-center justify-center text-xl hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <i class="fab fa-github" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://github.com/austincoveney" aria-label="Instagram Profile"
-                                    target="_blank"
-                                    class="flex justify-center items-center w-12 h-12 bg-white rounded-full text-primary text-xl shadow-md transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
-                                    <i class="fab fa-github"></i>
+                                <a href="https://instagram.com/austin.coveney" target="_blank" rel="noopener" aria-label="Instagram" class="w-12 h-12 rounded-full bg-white dark:bg-dark-light shadow-md text-primary dark:text-primary-light flex items-center justify-center text-xl hover:bg-primary hover:text-white transform hover:-translate-y-1 transition-all focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <i class="fab fa-instagram" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="bg-light rounded-lg p-8 md:p-12 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xzzedvol"
-                            method="POST">
-                            <div class="relative mb-8">
-                                <input type="text" id="name" name="name" placeholder=" " required
-                                    class="w-full py-4 px-5 bg-white rounded-md text-dark font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent border border-gray-light">
-                                <label for="name"
-                                    class="absolute top-1/2 left-5 -translate-y-1/2 text-gray font-medium transition-all duration-300 pointer-events-none">Your
-                                    Name</label>
-                            </div>
-                            <div class="relative mb-8">
-                                <input type="email" id="email" name="email" placeholder=" " required
-                                    class="w-full py-4 px-5 bg-white rounded-md text-dark font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent border border-gray-light">
-                                <label for="email"
-                                    class="absolute top-1/2 left-5 -translate-y-1/2 text-gray font-medium transition-all duration-300 pointer-events-none">Your
-                                    Email</label>
-                            </div>
-                            <div class="relative mb-8">
-                                <input type="text" id="subject" name="subject" placeholder=" " required
-                                    class="w-full py-4 px-5 bg-white rounded-md text-dark font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent border border-gray-light">
-                                <label for="subject"
-                                    class="absolute top-1/2 left-5 -translate-y-1/2 text-gray font-medium transition-all duration-300 pointer-events-none">Subject</label>
-                            </div>
-                            <div class="relative mb-8">
-                                <textarea id="message" name="message" placeholder=" " required
-                                    class="w-full py-4 px-5 h-40 bg-white rounded-md text-dark font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none border border-gray-light"></textarea>
-                                <label for="message"
-                                    class="absolute top-6 left-5 text-gray font-medium transition-all duration-300 pointer-events-none">Your
-                                    Message</label>
-                            </div>
-                            <button type="submit"
-                                class="w-full px-6 py-3 bg-primary text-white rounded-full font-medium shadow-md transition-all duration-300 hover:-translate-y-1 hover:bg-primary-dark relative overflow-hidden form-submit">
-                                Send Message <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
-
-                            <p id="form-status" class="mt-4 text-center hidden"></p>
-                        </form>
+                    
+                        <div data-aos="fade-left">
+                        <div class="bg-gray-50 dark:bg-dark-light rounded-lg p-8 shadow-lg">
+                            <form id="contact-form" class="space-y-6" action="https://formspree.io/f/xzzedvol" method="POST" novalidate>
+                                <div>
+                                    <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
+                                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg bg-white dark:bg-dark border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-light">
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Your Email</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-white dark:bg-dark border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-light">
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                                    <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 rounded-lg bg-white dark:bg-dark border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-light">
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Your Message</label>
+                                    <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 rounded-lg bg-white dark:bg-dark border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-light resize-none"></textarea>
+                                </div>
+                                
+                                <div id="form-feedback" class="hidden"></div>
+                                
+                                <button type="submit" class="w-full px-6 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg shadow-md transform hover:-translate-y-1 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" aria-label="Send Message">
+                                    Send Message <i class="fas fa-paper-plane ml-2" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-dark text-white py-12 md:py-16 relative">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent bg-[length:300%_100%]"
-            id="footer-gradient"></div>
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex flex-col items-center md:items-start">
-                    <a href="#hero"
-                        class="text-2xl font-bold text-white font-serif relative inline-block hover:after:w-full after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-white after:transition-all after:duration-300">AC</a>
-                    <p class="text-sm text-gray mt-4">&copy; <span id="current-year"></span> Austin Coveney.
-                        All rights
-                        reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-dark-light dark:bg-dark text-white py-12 relative">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent animate-gradient bg-[length:200%_auto]"></div>
+        
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                    <a href="#home" class="text-2xl font-bold text-white font-serif">AC</a>
+                    <p class="mt-2 text-gray-400">&copy; <span id="current-year"></span> Austin Coveney. All rights reserved.</p>
                 </div>
-                <div>
-                    <ul class="flex flex-wrap justify-center gap-4 md:gap-5">
-                        <li><a href="#about"
-                                class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">About</a>
-                        </li>
-                        <li><a href="#skills"
-                                class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">Skills</a>
-                        </li>
-                        <li><a href="#portfolio"
-                                class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">Portfolio</a>
-                        </li>
-                        <li><a href="#experience"
-                                class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">Experience</a>
-                        </li>
-                        <li><a href="#contact"
-                                class="text-gray transition-colors duration-300 hover:text-white relative before:content-[''] before:absolute before:bottom-[-5px] before:left-0 before:w-0 before:h-0.5 before:bg-white before:transition-all hover:before:w-full">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <a href="#hero" aria-label="Back to top"
-                        class="flex justify-center items-center w-12 h-12 bg-dark-light rounded-full text-primary text-xl transition-all duration-300 hover:bg-primary hover:text-white transform hover:-translate-y-1">
-                        <i class="fas fa-arrow-up"></i>
-                    </a>
-                </div>
+                
+                <ul class="flex flex-wrap justify-center gap-4">
+                    <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                    <li><a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a></li>
+                    <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+                    <li><a href="#experience" class="text-gray-400 hover:text-white transition-colors">Experience</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                </ul>
+                
+                <a href="#home" aria-label="Back to top" class="w-12 h-12 rounded-full bg-primary-dark hover:bg-primary text-white flex items-center justify-center transform hover:-translate-y-1 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>
-
-    <!-- Project Modal Popups -->
-    <div class="fixed top-0 left-0 w-full h-full bg-dark/80 flex justify-center items-center z-50 opacity-0 invisible transition-all duration-300 backdrop-blur-sm"
-        id="project-modal">
-        <div
-            class="w-11/12 max-w-3xl max-h-[90vh] bg-white rounded-lg shadow-2xl overflow-hidden relative scale-90 translate-y-8 transition-transform duration-500">
-            <div class="p-6 bg-primary text-white flex justify-between items-center">
-                <h3 id="modal-title" class="text-2xl font-bold text-white m-0">Project Details</h3>
-                <button
-                    class="modal-close bg-transparent border-0 text-white text-2xl cursor-pointer transition-transform duration-300 hover:rotate-90">
-                    <i class="fas fa-times"></i>
+    
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white dark:bg-dark-light rounded-lg max-w-3xl w-11/12 max-h-[90vh] overflow-hidden">
+            <div class="bg-primary p-4 flex justify-between items-center">
+                <h3 id="modal-title" class="text-xl font-bold text-white">Project Details</h3>
+                <button id="modal-close" class="text-white hover:text-gray-200 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
                 </button>
             </div>
-            <div class="p-8 max-h-[calc(90vh-150px)] overflow-y-auto" id="modal-content">
-                <!-- Content will be inserted dynamically -->
-            </div>
-            <div class="p-6 bg-light flex justify-end">
-                <button
-                    class="modal-close px-6 py-3 bg-transparent text-primary border-2 border-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-white">Close</button>
+            
+            <div id="modal-content" class="p-6 overflow-y-auto max-h-[calc(90vh-100px)]">
+                <!-- Content will be loaded dynamically -->
             </div>
         </div>
     </div>
 
-    <!-- Motion.dev -->
-    <script type="module" src="https://cdn.jsdelivr.net/npm/motion@latest/+esm"></script>
-    <script src="index.mjs" type="module"></script>
-</body>
+    <!-- AOS (Animate on Scroll) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS (if available)
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true,
+                    mirror: false,
+                    disable: 'mobile'
+                });
+            } else {
+                // Fallback if AOS is not loaded - basic fade-in effect
+                document.querySelectorAll('[data-aos]').forEach(element => {
+                    element.style.opacity = '0';
+                    element.style.transition = 'opacity 0.8s ease-in-out, transform 0.8s ease-in-out';
+                    element.style.transform = 'translateY(20px)';
+                    
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    });
+                    
+                    observer.observe(element);
+                });
+            }
+            
+            // Set current year in footer
+            const currentYearElement = document.getElementById('current-year');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
+            
+            // Typewriter effect
+            const typewriterElement = document.getElementById('typewriter');
+            if (typewriterElement) {
+                const phrases = ['Web Developer', 'Entrepreneur', 'Digital Marketer', 'Problem Solver'];
+                let currentPhraseIndex = 0;
+                let currentCharIndex = 0;
+                let isDeleting = false;
+                let typingSpeed = 100;
 
+                function typeWriter() {
+                    const currentPhrase = phrases[currentPhraseIndex];
+                    
+                    if (isDeleting) {
+                        typewriterElement.textContent = currentPhrase.substring(0, currentCharIndex - 1);
+                        currentCharIndex--;
+                    } else {
+                        typewriterElement.textContent = currentPhrase.substring(0, currentCharIndex + 1);
+                        currentCharIndex++;
+                    }
+                    
+                    if (!isDeleting && currentCharIndex === currentPhrase.length) {
+                        isDeleting = true;
+                        typingSpeed = 1000; // Pause before deleting
+                    } else if (isDeleting && currentCharIndex === 0) {
+                        isDeleting = false;
+                        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                        typingSpeed = 300; // Pause before typing next phrase
+                    } else {
+                        typingSpeed = isDeleting ? 50 : 100;
+                    }
+                    
+                    setTimeout(typeWriter, typingSpeed);
+                }
+                
+                // Start typewriter effect
+                typeWriter();
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuToggle && mobileMenuClose && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.remove('translate-x-full');
+                    document.body.classList.add('overflow-hidden');
+                });
+                
+                mobileMenuClose.addEventListener('click', () => {
+                    mobileMenu.classList.add('translate-x-full');
+                    document.body.classList.remove('overflow-hidden');
+                });
+                
+                // Close mobile menu when clicking a link
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('translate-x-full');
+                        document.body.classList.remove('overflow-hidden');
+                    });
+                });
+            }
+            
+            // Dark mode toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+            
+            function toggleDarkMode() {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            }
+            
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleDarkMode);
+            }
+            
+            if (themeToggleMobile) {
+                themeToggleMobile.addEventListener('click', toggleDarkMode);
+            }
+            
+            // Check for saved theme preference or use system preference
+            if (localStorage.getItem('theme') === 'dark' || 
+                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            
+            // Scroll progress
+            const progressBar = document.getElementById('progress-bar');
+            
+            if (progressBar) {
+                window.addEventListener('scroll', () => {
+                    const scrollTop = window.scrollY;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercent = (scrollTop / docHeight) * 100;
+                    progressBar.style.width = scrollPercent + '%';
+                    
+                    // Header background on scroll
+                    const header = document.getElementById('header');
+                    if (header) {
+                        if (scrollTop > 50) {
+                            header.classList.add('bg-white/90', 'dark:bg-dark/90', 'backdrop-blur-sm', 'shadow-md', 'py-4');
+                        } else {
+                            header.classList.remove('bg-white/90', 'dark:bg-dark/90', 'backdrop-blur-sm', 'shadow-md', 'py-4');
+                        }
+                    }
+                });
+            }
+            
+            // Portfolio filtering
+            const portfolioFilters = document.querySelectorAll('.portfolio-filter');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            if (portfolioFilters.length > 0 && portfolioItems.length > 0) {
+                portfolioFilters.forEach(filter => {
+                    filter.addEventListener('click', function() {
+                        // Remove active class from all filters
+                        portfolioFilters.forEach(btn => {
+                            btn.classList.remove('active', 'bg-primary', 'text-white');
+                            btn.classList.add('bg-gray-100', 'dark:bg-dark-light', 'text-gray-700', 'dark:text-gray-300');
+                            btn.setAttribute('aria-pressed', 'false');
+                        });
+                        
+                        // Add active class to clicked filter
+                        this.classList.add('active', 'bg-primary', 'text-white');
+                        this.classList.remove('bg-gray-100', 'dark:bg-dark-light', 'text-gray-700', 'dark:text-gray-300');
+                        this.setAttribute('aria-pressed', 'true');
+                        
+                        const filterValue = this.getAttribute('data-filter');
+                        
+                        portfolioItems.forEach(item => {
+                            if (filterValue === 'all' || item.getAttribute('data-category').includes(filterValue)) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
+            
+            // Timeline tabs
+            const timelineBtns = document.querySelectorAll('.timeline-btn');
+            const experienceTimeline = document.getElementById('experience-timeline');
+            const educationTimeline = document.getElementById('education-timeline');
+            
+            if (timelineBtns.length > 0 && experienceTimeline && educationTimeline) {
+                timelineBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        // Remove active class from all buttons
+                        timelineBtns.forEach(b => {
+                            b.classList.remove('active', 'bg-primary', 'text-white');
+                            b.setAttribute('aria-pressed', 'false');
+                        });
+                        
+                        // Add active class to clicked button
+                        this.classList.add('active', 'bg-primary', 'text-white');
+                        this.setAttribute('aria-pressed', 'true');
+                        
+                        const target = this.getAttribute('data-target');
+                        
+                        if (target === 'experience') {
+                            experienceTimeline.classList.remove('hidden');
+                            educationTimeline.classList.add('hidden');
+                        } else {
+                            educationTimeline.classList.remove('hidden');
+                            experienceTimeline.classList.add('hidden');
+                        }
+                    });
+                });
+            }
+            
+            // Project modal
+            const projectLinks = document.querySelectorAll('.project-details');
+            const projectModal = document.getElementById('project-modal');
+            const modalClose = document.getElementById('modal-close');
+            const modalTitle = document.getElementById('modal-title');
+            const modalContent = document.getElementById('modal-content');
+            
+            if (projectLinks.length > 0 && projectModal && modalClose && modalTitle && modalContent) {
+                const projectData = {
+                    digigrow: {
+                        title: 'DigiGrow LTD',
+                        content: `
+                            <div class="mb-6">
+                                <div class="w-full h-64 rounded-lg mb-4 placeholder-img" aria-label="DigiGrow LTD project image"></div>
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">About This Project</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">DigiGrow LTD is a digital marketing company I co-founded that provides comprehensive marketing solutions for businesses. As Company Director, I oversee operations and strategic direction.</p>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Key Responsibilities</h4>
+                                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
+                                    <li>Developing marketing strategies for clients across various industries</li>
+                                    <li>Creating compelling web content, social media posts, and advertising campaigns</li>
+                                    <li>Building and maintaining client websites and digital platforms</li>
+                                    <li>Implementing digital workflows and user-friendly systems</li>
+                                    <li>Analyzing campaign performance and optimizing for improved results</li>
+                                </ul>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Technologies Used</h4>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">WordPress</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Python</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">SEO Tools</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Analytics</span>
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Results & Impact</h4>
+                                <p class="text-gray-700 dark:text-gray-300">Successfully helped multiple clients increase their online presence through effective digital marketing strategies, resulting in improved conversion rates and business growth.</p>
+                            </div>
+                        `
+                    },
+                    scraper: {
+                        title: 'Web Data Scraper',
+                        content: `
+                            <div class="mb-6">
+                                <div class="w-full h-64 rounded-lg mb-4 placeholder-img" aria-label="Web Data Scraper project image"></div>
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">About This Project</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">I developed a custom web data scraper using Python to collect business information for client acquisition. This tool automates the process of gathering potential client data and significantly improves outreach efficiency.</p>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Technical Details</h4>
+                                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
+                                    <li>Built with Python and BeautifulSoup for efficient web scraping</li>
+                                    <li>Implemented data cleaning and processing algorithms</li>
+                                    <li>Created a user-friendly interface for non-technical users</li>
+                                    <li>Developed export functionality for seamless integration with CRM systems</li>
+                                    <li>Designed with scalability in mind to handle large data sets</li>
+                                </ul>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Technologies Used</h4>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Python</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">BeautifulSoup</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Requests</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Pandas</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">CSV Processing</span>
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Results & Impact</h4>
+                                <p class="text-gray-700 dark:text-gray-300">This tool is currently being used by DigiGrow to identify and qualify potential clients, significantly reducing the time spent on manual prospecting and increasing the efficiency of our sales process.</p>
+                            </div>
+                        `
+                    },
+                    yip: {
+                        title: 'Young Innovators Project',
+                        content: `
+                            <div class="mb-6">
+                                <div class="w-full h-64 rounded-lg mb-4 placeholder-img" aria-label="Young Innovators Project image"></div>
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">About This Project</h4>
+                                <p class="text-gray-700 dark:text-gray-300 mb-4">The Young Innovators Project is a collaborative initiative I co-partner with Farnborough councillors and the mayor to help young people aged 13-25 develop entrepreneurial skills and business acumen.</p>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Key Responsibilities</h4>
+                                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-4 space-y-2">
+                                    <li>Organizing and selling events focused on business skills development</li>
+                                    <li>Creating educational content and workshop materials</li>
+                                    <li>Coordinating with local government officials and business leaders</li>
+                                    <li>Public speaking and presenting at events</li>
+                                    <li>Mentoring young entrepreneurs on their business ideas</li>
+                                </ul>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Skills Applied</h4>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Event Planning</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Public Speaking</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Project Management</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Business Education</span>
+                                    <span class="bg-gray-200 dark:bg-dark px-3 py-1 rounded-full text-sm">Youth Mentoring</span>
+                                </div>
+                                
+                                <h4 class="text-xl font-bold text-primary dark:text-primary-light mb-2">Results & Impact</h4>
+                                <p class="text-gray-700 dark:text-gray-300">Successfully launched multiple workshops with strong attendance, creating valuable networking opportunities for young entrepreneurs and providing them with practical business skills and knowledge.</p>
+                            </div>
+                        `
+                    }
+                };
+                
+                projectLinks.forEach(link => {
+                    link.addEventListener('click', e => {
+                        e.preventDefault();
+                        const projectId = link.getAttribute('data-project');
+                        const project = projectData[projectId];
+                        
+                        if (project) {
+                            modalTitle.textContent = project.title;
+                            modalContent.innerHTML = project.content;
+                            
+                            // Show modal with animation
+                            projectModal.classList.remove('opacity-0', 'pointer-events-none');
+                            document.body.classList.add('overflow-hidden');
+                            
+                            // Focus on close button for accessibility
+                            setTimeout(() => {
+                                modalClose.focus();
+                            }, 100);
+                        }
+                    });
+                });
+                
+                modalClose.addEventListener('click', () => {
+                    projectModal.classList.add('opacity-0', 'pointer-events-none');
+                    document.body.classList.remove('overflow-hidden');
+                    
+                    // Return focus to the element that opened the modal for accessibility
+                    projectLinks.forEach(link => {
+                        if (link.getAttribute('data-project') === modalTitle.getAttribute('data-current-project')) {
+                            link.focus();
+                        }
+                    });
+                });
+                
+                projectModal.addEventListener('click', e => {
+                    if (e.target === projectModal) {
+                        projectModal.classList.add('opacity-0', 'pointer-events-none');
+                        document.body.classList.remove('overflow-hidden');
+                    }
+                });
+                
+                // Escape key to close modal
+                document.addEventListener('keydown', e => {
+                    if (e.key === 'Escape' && !projectModal.classList.contains('opacity-0')) {
+                        projectModal.classList.add('opacity-0', 'pointer-events-none');
+                        document.body.classList.remove('overflow-hidden');
+                    }
+                });
+            }
+            
+            // Smooth scroll to section on link click
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        // Check if smooth scroll is supported
+                        if ('scrollBehavior' in document.documentElement.style) {
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            // Fallback for browsers that don't support smooth scrolling
+                            window.scrollTo(0, offsetPosition);
+                        }
+                    }
+                });
+            });
+            
+            // Contact form submission with validation
+            const contactForm = document.getElementById('contact-form');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', e => {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const subject = document.getElementById('subject').value.trim();
+                    const message = document.getElementById('message').value.trim();
+                    
+                    // Simple validation
+                    if (!name || !email || !subject || !message) {
+                        // Show error message
+                        const feedbackElement = document.getElementById('form-feedback');
+                        if (feedbackElement) {
+                            feedbackElement.textContent = 'Please fill in all fields';
+                            feedbackElement.className = 'mt-4 text-red-500 font-medium text-sm';
+                            feedbackElement.classList.remove('hidden');
+                            
+                            // Hide message after 3 seconds
+                            setTimeout(() => {
+                                feedbackElement.classList.add('hidden');
+                            }, 3000);
+                        } else {
+                            alert('Please fill in all fields');
+                        }
+                        return;
+                    }
+                    
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        // Show error message
+                        const feedbackElement = document.getElementById('form-feedback');
+                        if (feedbackElement) {
+                            feedbackElement.textContent = 'Please enter a valid email address';
+                            feedbackElement.className = 'mt-4 text-red-500 font-medium text-sm';
+                            feedbackElement.classList.remove('hidden');
+                            
+                            // Hide message after 3 seconds
+                            setTimeout(() => {
+                                feedbackElement.classList.add('hidden');
+                            }, 3000);
+                        } else {
+                            alert('Please enter a valid email address');
+                        }
+                        return;
+                    }
+                    
+                    // In a real implementation, you would send this data to a server
+                    // For now, show a success message
+                    const feedbackElement = document.getElementById('form-feedback');
+                    if (feedbackElement) {
+                        feedbackElement.textContent = 'Thank you for your message! I\'ll get back to you soon.';
+                        feedbackElement.className = 'mt-4 text-green-500 font-medium text-sm';
+                        feedbackElement.classList.remove('hidden');
+                        
+                        // Hide message after 5 seconds
+                        setTimeout(() => {
+                            feedbackElement.classList.add('hidden');
+                        }, 5000);
+                    } else {
+                        alert('Thank you for your message! I\'ll get back to you soon.');
+                    }
+                    
+                    // Reset form
+                    contactForm.reset();
+                });
+            }
+            
+            // Initialize the scroll indicator functionality
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            if (scrollIndicator) {
+                scrollIndicator.addEventListener('click', () => {
+                    const aboutSection = document.getElementById('about');
+                    if (aboutSection) {
+                        const headerOffset = 80;
+                        const elementPosition = aboutSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        // Check if smooth scroll is supported
+                        if ('scrollBehavior' in document.documentElement.style) {
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            // Fallback for browsers that don't support smooth scrolling
+                            window.scrollTo(0, offsetPosition);
+                        }
+                    }
+                });
+            }
+            
+            // Add skip to content link for accessibility
+            const skipLink = document.createElement('a');
+            skipLink.href = '#main-content';
+            skipLink.className = 'skip-link sr-only focus:not-sr-only fixed top-2 left-2 bg-primary text-white py-2 px-4 z-50 focus:outline-none rounded-md';
+            skipLink.textContent = 'Skip to main content';
+            document.body.insertBefore(skipLink, document.body.firstChild);
+        });
+    </script>
+</body>
 </html>
